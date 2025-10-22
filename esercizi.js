@@ -38,6 +38,33 @@
 // }
 
 //esercizio 5
-const  frase = prompt("Inserisci una frase:");
-const fraseInMaiuscolo = frase.toUpperCase();
-alert(fraseInMaiuscolo);
+// const  frase = prompt("Inserisci una frase:");
+// const fraseInMaiuscolo = frase.toUpperCase();
+// alert(fraseInMaiuscolo);
+
+
+
+//esercizio 6, fai un ciclo for che stampi il quadrato dei numeri da 1 a 100
+
+
+// for (let i = 0; i <= 100; i++) {
+//     console.log(Math.pow(i,2))
+    
+// }
+
+//esercizio 7, fai un ciclo che per i numer ida uno a 100 stampi pari se il numero è pari e dispari se il numero è dispari
+// for (let i = 0; i <= 100; i++) {
+//     if(i % 2 === 0){
+//         console.log("é pari");
+//     }else {
+//         console.log("è dispari");
+//     }
+    
+    
+// }
+
+
+
+//Esercizio 8, usando un ciclo logga i numeri da 1 a 100  mettendo un asterisco vicino ai multipli di 7
+//Esercizio 9, usando un ciclo logga i numeri da 1 a 100 mettendo un  asterisco vicino ai quadrati pefetti
+//Esercizio 10, chiedi all'utetnte un numero  (Positivo) di partenza e poi logga tutti i numeri dal

@@ -180,6 +180,16 @@ true !== false; //true
 // let hello = "Ciao" + " " + firstName;
 // console.log(hello);
 
+let topolino = 0;
+let topolino = topolino + 10;
+
+topolino += 10 //equivalente a let topolino = topolino + 10;
+
+topolino = topolino +1;
+topolino += 1;
+topolino++; //valido solo con il numero 1
+
+
 //DIFFERENZA TRA LET E VAR;
 
 
