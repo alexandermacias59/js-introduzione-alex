@@ -97,6 +97,11 @@
 const numero1 = parseInt(prompt("Inserisci il primo numero:"));
 const numero2 = parseInt(prompt("Inserisci il secondo numero:"));
 
-
+for (let i = numero1; i < numero2; i++) {
+    if (i %2 === 0) {
+        console.log(i)
+    }
+    
+}
 
 // 12) chiedi all'utente quanti anni ha e digli quante ore ha gia' vissuto
