@@ -123,7 +123,128 @@
 //<-------------------------------------------------------------------------------------------------------->
 
 // 12) chiedi all'utente quanti anni ha e digli quante ore ha gia' vissuto
-const chiediEta = parseInt(prompt("Quanti anni hai?"));
-const annInOre = (chiediEta * 365 * 24);
-alert("Fino ad ora hai vissuto: " + annInOre + " ore");
+// const chiediEta = parseInt(prompt("Quanti anni hai?"));
+// const annInOre = (chiediEta * 365 * 24);
+// alert("Fino ad ora hai vissuto: " + annInOre + " ore");
+
+
+//<-------------------------------------------------------------------------------------------------------->
+
+//esercizi per casa
+
+//Escribe un bucle que realice siete llamadas a console.log para mostrar el
+// siguiente triángulo:
+// #
+// ##
+// ###
+// ####
+// #####
+// ######
+// #######
+
+// for (let i = 0; i < 7; i++) {
+    
+//     console.log("#".repeat(i))
+// }
+
+// for (let i = 1; i <= 7; i++) {
+//   let linea = '';
+//   for (let j = 1; j <= i; j++) {
+//     linea += '#';
+//   }
+//   console.log(linea);
+// }
+
+
+
+//<-------------------------------------------------------------------------------------------------------->
+
+// FizzBuzz
+// Escribe un programa que use console.log para imprimir todos los números
+// del 1 al 100, con dos excepciones. Para los números divisibles por 3, imprime
+// "Fizz" en lugar del número, y para los números divisibles por 5 (y no por 3),
+// imprime "Buzz" en su lugar.
+// Cuando tengas eso funcionando, modifica tu programa para imprimir "FizzBuzz
+// " para los números que son divisibles por 3 y 5 (y sigue imprimiendo "Fizz" o
+// "Buzz" para los números que son divisibles solo por uno de esos).
+// (Esto es en realidad una pregunta de entrevista que se ha afirmado que
+// elimina a un porcentaje significativo de candidatos a programadores. Entonces,
+// si lo resolviste, tu valor en el mercado laboral acaba de aumentar.)
+
+// for (let i = 1; i < 100; i++) {
+//  if (i % 3 === 0) {
+//     console.log("Fizz" + i)
+    
+//  } else if (i % 5 === 0){
+//     console.log("Buzz"+ i)
+    
+//  }    
+// }
+
+// for (let i = 1; i <= 100; i++) {
+//  if (i % 3 === 0 & i % 5 === 0) {
+//     console.log("Fizzbuzz " + i)
+    
+//  } else if (i % 5 === 0){
+//     console.log("Buzz "+ i)
+    
+//  } else if (i % 3 === 0) {
+//     console.log("Fizz " + i)
+//  }
+//  else{
+//     console.log(i)
+//  }
+// }
+
+
+//<-------------------------------------------------------------------------------------------------------->
+
+// Tablero de ajedrez
+// Escribe un programa que cree una cadena que represente un tablero de 8x8,
+// usando caracteres de salto de línea para separar las líneas. En cada posición
+// del tablero hay un carácter de espacio o un carácter "#". Los caracteres deben
+// formar un tablero de ajedrez.
+// Al pasar esta cadena a console.log debería mostrar algo como esto:
+// # # # #
+// # # # #
+// # # # #
+// # # # #
+// # # # #
+// # # # #
+// # # # #
+// # # # #
+// Cuando tengas un programa que genere este patrón, define una variable size
+// = 8 y cambia el programa para que funcione para cualquier size, generando
+// un tablero con el ancho y alto dados.
+
+let size = 8;
+let tavola = ""; // cadena vacía donde construiremos el tablero
+
+for (let fila = 0; fila < size; fila++) {
+  for (let colonna = 0; colonna < size; colonna++) {
+    
+    if ((fila + colonna) % 2 == 0) {
+      tavola += " ";
+    } else {
+      tavola += "#";
+    }
+  }
+  tavola += "\n";
+} console.log(tavola);
+
+
+
+// let size = 8;
+
+// let linea1 = " #".repeat(size / 2);
+// let linea2 = "# ".repeat(size / 2);
+// let tablero = "";
+
+// for (let i = 0; i < size; i++) {
+//   tablero += (i % 2 === 0 ? linea1 : linea2) + "\n";
+// }
+
+// console.log(tablero);
+
+
 
