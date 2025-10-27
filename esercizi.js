@@ -155,6 +155,12 @@
 //   console.log(linea);
 // }
 
+// let linea = "#";
+// for (let i = 0; i < 7; i++) {
+// console.log(linea) ;
+// linea = linea + "#" ;
+// }
+
 
 
 //<-------------------------------------------------------------------------------------------------------->
@@ -217,20 +223,20 @@
 // = 8 y cambia el programa para que funcione para cualquier size, generando
 // un tablero con el ancho y alto dados.
 
-let size = 8;
-let tavola = ""; // cadena vacía donde construiremos el tablero
+// let size = 8;
+// let tavola = ""; // cadena vacía donde construiremos el tablero
 
-for (let fila = 0; fila < size; fila++) {
-  for (let colonna = 0; colonna < size; colonna++) {
+// for (let fila = 0; fila < size; fila++) {
+//   for (let colonna = 0; colonna < size; colonna++) {
     
-    if ((fila + colonna) % 2 == 0) {
-      tavola += " ";
-    } else {
-      tavola += "#";
-    }
-  }
-  tavola += "\n";
-} console.log(tavola);
+//     if ((fila + colonna) % 2 == 0) {
+//       tavola += " ";
+//     } else {
+//       tavola += "#";
+//     }
+//   }
+//   tavola += "\n";
+// } console.log(tavola);
 
 
 
@@ -246,5 +252,111 @@ for (let fila = 0; fila < size; fila++) {
 
 // console.log(tablero);
 
+//correzione esercizi
+
+// let chessboard = "";
+
+// for (let i = 0; i < 8; i++) {
+//   if(i % 2 === 0){
+//     chessboard = chessboard + " # # # # \n"
+//   }
+//   else{
+//     chessboard = chessboard + "# # # #\n"
+//   }
+  
+// }console.log(chessboard)
+
+// let size = 8 ;
+// let chessboard = "";
+
+// for (let line = 0; line < size; line++) {
+
+// for (let column = 0; column < 0; column++) {
+
+//      if (line % 2 === 0) {
+
+//       if (column % 2 === 0) {
+//         chessboard = chessboard + "";
+//       } else {
+//         chessboard = chessboard + "#";
+//       }
+
+//      } else{
+
+//       if (column % 2 === 0) {
+//         chessboard = chessboard + "#";
+//       } else {
+//         chessboard = chessboard + "";
+//       }
+
+//      }
+// }  chessboard = chessboard + "\n"
+// } console.log(chessboard)
 
 
+// let size = 8 ;
+// let chessboard = "";
+
+// for (let line = 0; line < size; line++) {
+
+// for (let column = 0; column < 0; column++) {
+
+//      if((line + column) % 2 === 0) {
+//       chessboard = chessboard + " "
+//      } else {
+//       chessboard = chessboard + "#"
+//      }
+// }  chessboard = chessboard + "\n"
+// } console.log(chessboard)
+
+
+//<-------------------------------------------------------------------------------------------------------->
+
+
+//esercizio 16 / Scrivere una funzione che mi dice se un numero è pari;
+
+function checkEven(inputNumber) {
+  const isEven = inputNumber % 2 === 0 ;
+  return isEven;
+}
+const evenNumber = checkEven(6);
+console.log(evenNumber);
+//arrow function
+const checkEvenLambda = (inputNumber) => inputNumber % 2 === 0;
+const evenNumber2 = checkEvenLambda(7);
+console.log(evenNumber2);
+
+
+
+// ESericizio 17 / scrivere una funzione che moltiplichi una stringa per un numero
+// es : se inserisco "cacca" e 3 , l'output sara "caccacaccacacca"
+
+function multiplyString(inputString,multiplier) {
+  let multipliedString = "";
+  for (let i = 0; i < multiplier; i++) {
+      multipliedString = multipliedString + inputString;
+      // multipliedString += inputString;    
+  } return multipliedString;
+}
+const res = multiplyString("pippo",3);
+console.log(res);
+
+//Versione arrow function
+const multipliedStringLambda = (inputString,multiplier) =>inputString.repeat(multiplier);
+
+const resLambda = multipliedStringLambda("basta",5);
+console.log(resLambda);
+
+//  Esercizio 18 / Scrivi una funzione che dato un numero mi dice se è intero oppure no
+
+function checkInteger(n) {
+  const isInteger = n% 1 === 0;
+  return isInteger;
+}
+
+const integerNumber = checkInteger(45);
+console.log(integerNumber);
+
+const checkIntegerLambda = (n)=> n % 1 === 0; 
+const integerNumberLambda = checkIntegerLambda(3.14)
+console.log(integerNumberLambda);
