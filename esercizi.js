@@ -315,48 +315,133 @@
 
 //esercizio 16 / Scrivere una funzione che mi dice se un numero è pari;
 
-function checkEven(inputNumber) {
-  const isEven = inputNumber % 2 === 0 ;
-  return isEven;
-}
-const evenNumber = checkEven(6);
-console.log(evenNumber);
-//arrow function
-const checkEvenLambda = (inputNumber) => inputNumber % 2 === 0;
-const evenNumber2 = checkEvenLambda(7);
-console.log(evenNumber2);
+// function checkEven(inputNumber) {
+//   const isEven = inputNumber % 2 === 0 ;
+//   return isEven;
+// }
+// const evenNumber = checkEven(6);
+// console.log(evenNumber);
+// //arrow function
+// const checkEvenLambda = (inputNumber) => inputNumber % 2 === 0;
+// const evenNumber2 = checkEvenLambda(7);
+// console.log(evenNumber2);
 
+//<-------------------------------------------------------------------------------------------------------->
 
 
 // ESericizio 17 / scrivere una funzione che moltiplichi una stringa per un numero
 // es : se inserisco "cacca" e 3 , l'output sara "caccacaccacacca"
 
-function multiplyString(inputString,multiplier) {
-  let multipliedString = "";
-  for (let i = 0; i < multiplier; i++) {
-      multipliedString = multipliedString + inputString;
-      // multipliedString += inputString;    
-  } return multipliedString;
-}
-const res = multiplyString("pippo",3);
-console.log(res);
+// function multiplyString(inputString,multiplier) {
+//   let multipliedString = "";
+//   for (let i = 0; i < multiplier; i++) {
+//       multipliedString = multipliedString + inputString;
+//       // multipliedString += inputString;    
+//   } return multipliedString;
+// }
+// const res = multiplyString("pippo",3);
+// console.log(res);
 
-//Versione arrow function
-const multipliedStringLambda = (inputString,multiplier) =>inputString.repeat(multiplier);
+// //Versione arrow function
+// const multipliedStringLambda = (inputString,multiplier) =>inputString.repeat(multiplier);
 
-const resLambda = multipliedStringLambda("basta",5);
-console.log(resLambda);
+// const resLambda = multipliedStringLambda("basta",5);
+// console.log(resLambda);
+
+//<-------------------------------------------------------------------------------------------------------->
+
 
 //  Esercizio 18 / Scrivi una funzione che dato un numero mi dice se è intero oppure no
 
-function checkInteger(n) {
-  const isInteger = n% 1 === 0;
-  return isInteger;
+// function checkInteger(n) {
+//   const isInteger = n% 1 === 0;
+//   return isInteger;
+// }
+
+// const integerNumber = checkInteger(45);
+// console.log(integerNumber);
+
+// const checkIntegerLambda = (n)=> n % 1 === 0; 
+// const integerNumberLambda = checkIntegerLambda(3.14)
+// console.log(integerNumberLambda);
+
+//<-------------------------------------------------------------------------------------------------------->
+
+
+// 19) Scrivere una funzione che dati in input due numeri ritorni il maggiore;
+
+function numeroMaggiore(a,b) {
+if (a>b) {
+  return a;
+} else if (b>a) {
+  return b;
+} else {
+  return "Numeri uguali";
+}
+}
+const isMayor = numeroMaggiore(114,122);
+console.log(isMayor);
+
+
+const numeroMaggioreLambda = (a,b) => {
+  if (a>b) { return a} else if (b>a) { return b} else "Numeri uguali";
+}
+const isMayorLambda = numeroMaggioreLambda(1000,200);
+console.log(isMayorLambda);
+
+
+//<-------------------------------------------------------------------------------------------------------->
+
+
+// 20) Scrivere una funzione che date in input due stringhe ritorni la più corta;
+
+function mostShortString(string1, string2) {
+  if (string1.length < string2.length) {
+    return string1;
+  } else if (string2.length < string1.length ) {
+    return string2;
+  } else {
+    return "Hanno la stessa lunghezza";
+  } 
+} 
+const shortString = mostShortString("banana", "mango");
+console.log(shortString);
+
+
+const mostShortStringLambda = (a,b) => { if (a.length < b.length) {return a;} else if (b.length < a.length ) {return b;} else {return "Hanno la stessa lunghezza";}}
+ const shortStringLambda = mostShortStringLambda("Javascript", "Java");
+ console.log(shortStringLambda);
+
+ //<-------------------------------------------------------------------------------------------------------->
+
+
+// 21) Scrivere una funzione che data in input una stringa ritorni la sua iniziale;
+
+function firstLetterString (string) {
+  return string[0];
+}
+const primaLettera = firstLetterString("micro");
+console.log(primaLettera);
+
+
+const firstLetterStringLambda = string => { return string[0] };
+const primaLetteraLambda = firstLetterStringLambda("Animale");
+console.log(primaLetteraLambda);
+
+//<-------------------------------------------------------------------------------------------------------->
+
+
+// 22) scrivere una fuzione che dati in input una stringa e un numero,logghi la stringa tante volte quante il numereo dato;
+
+function stringMultiplier(string, number) {
+  for (let i = 0; i < number; i++) {
+    console.log(string);
+  }
 }
 
-const integerNumber = checkInteger(45);
-console.log(integerNumber);
+const stringaMoltiplicata = stringMultiplier("aceite ", 6);
+console.log(stringaMoltiplicata);
 
-const checkIntegerLambda = (n)=> n % 1 === 0; 
-const integerNumberLambda = checkIntegerLambda(3.14)
-console.log(integerNumberLambda);
+const stringMultiplierLambda = (string, number) => { for (let i = 0; i < number; i++) { console.log(string); } }
+const stringaMoltiplicataLambda = stringMultiplierLambda("cioccolato", 4);
+console.log(stringaMoltiplicataLambda);
