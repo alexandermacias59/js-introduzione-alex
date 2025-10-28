@@ -370,78 +370,123 @@
 
 // 19) Scrivere una funzione che dati in input due numeri ritorni il maggiore;
 
-function numeroMaggiore(a,b) {
-if (a>b) {
-  return a;
-} else if (b>a) {
-  return b;
-} else {
-  return "Numeri uguali";
-}
-}
-const isMayor = numeroMaggiore(114,122);
-console.log(isMayor);
+// function numeroMaggiore(a,b) {
+// if (a>b) {
+//   return a;
+// } else if (b>a) {
+//   return b;
+// } else {
+//   return "Numeri uguali";
+// }
+// }
+// const isMayor = numeroMaggiore(114,122);
+// console.log(isMayor);
 
 
-const numeroMaggioreLambda = (a,b) => {
-  if (a>b) { return a} else if (b>a) { return b} else "Numeri uguali";
-}
-const isMayorLambda = numeroMaggioreLambda(1000,200);
-console.log(isMayorLambda);
+// const numeroMaggioreLambda = (a,b) => {
+//   if (a>b) { return a} else if (b>a) { return b} else "Numeri uguali";
+// }
+// const isMayorLambda = numeroMaggioreLambda(1000,200);
+// console.log(isMayorLambda);
 
+
+// //<-------------------------------------------------------------------------------------------------------->
+
+
+// // 20) Scrivere una funzione che date in input due stringhe ritorni la più corta;
+
+// function mostShortString(string1, string2) {
+//   if (string1.length < string2.length) {
+//     return string1;
+//   } else if (string2.length < string1.length ) {
+//     return string2;
+//   } else {
+//     return "Hanno la stessa lunghezza";
+//   } 
+// } 
+// const shortString = mostShortString("banana", "mango");
+// console.log(shortString);
+
+
+// const mostShortStringLambda = (a,b) => { if (a.length < b.length) {return a;} else if (b.length < a.length ) {return b;} else {return "Hanno la stessa lunghezza";}}
+//  const shortStringLambda = mostShortStringLambda("Javascript", "Java");
+//  console.log(shortStringLambda);
+
+//  //<-------------------------------------------------------------------------------------------------------->
+
+
+// // 21) Scrivere una funzione che data in input una stringa ritorni la sua iniziale;
+
+// function firstLetterString (string) {
+//   return string[0];
+// }
+// const primaLettera = firstLetterString("micro");
+// console.log(primaLettera);
+
+
+// const firstLetterStringLambda = string => { return string[0] };
+// const primaLetteraLambda = firstLetterStringLambda("Animale");
+// console.log(primaLetteraLambda);
+
+// //<-------------------------------------------------------------------------------------------------------->
+
+
+// // 22) scrivere una fuzione che dati in input una stringa e un numero,logghi la stringa tante volte quante il numereo dato;
+
+// function stringMultiplier(string, number) {
+//   for (let i = 0; i < number; i++) {
+//     console.log(string);
+//   }
+// }
+
+// const stringaMoltiplicata = stringMultiplier("aceite ", 6);
+// console.log(stringaMoltiplicata);
+
+// const stringMultiplierLambda = (string, number) => { for (let i = 0; i < number; i++) { console.log(string); } }
+// const stringaMoltiplicataLambda = stringMultiplierLambda("cioccolato", 4);
+// console.log(stringaMoltiplicataLambda);
 
 //<-------------------------------------------------------------------------------------------------------->
 
-
-// 20) Scrivere una funzione che date in input due stringhe ritorni la più corta;
-
-function mostShortString(string1, string2) {
-  if (string1.length < string2.length) {
-    return string1;
-  } else if (string2.length < string1.length ) {
-    return string2;
-  } else {
-    return "Hanno la stessa lunghezza";
-  } 
-} 
-const shortString = mostShortString("banana", "mango");
-console.log(shortString);
-
-
-const mostShortStringLambda = (a,b) => { if (a.length < b.length) {return a;} else if (b.length < a.length ) {return b;} else {return "Hanno la stessa lunghezza";}}
- const shortStringLambda = mostShortStringLambda("Javascript", "Java");
- console.log(shortStringLambda);
-
- //<-------------------------------------------------------------------------------------------------------->
-
-
-// 21) Scrivere una funzione che data in input una stringa ritorni la sua iniziale;
-
-function firstLetterString (string) {
-  return string[0];
-}
-const primaLettera = firstLetterString("micro");
-console.log(primaLettera);
-
-
-const firstLetterStringLambda = string => { return string[0] };
-const primaLetteraLambda = firstLetterStringLambda("Animale");
-console.log(primaLetteraLambda);
+//23) You can get the Nth character, or letter, from a string by writing [N] after the string (for example, string[2]). The resulting value will be a string containing only one character (for example, "b"). The first character has position 0, which causes the last one to be found at position string.length - 1. In other words, a two-character string has length 2, and its characters have positions 0 and 1.
+//Write a function called countBs that takes a string as its only argument and returns a number that indicates how many uppercase B characters there are in the string.
+//Next, write a function called countChar that behaves like countBs, except it takes a second argument that indicates the character that is to be counted (rather than counting only uppercase B characters). Rewrite countBs to make use of this new function.
 
 //<-------------------------------------------------------------------------------------------------------->
 
+//24) Inversione di un numero
+//Scrivi una funzione invertiNumero che prenda un numero come parametro e restituisca il numero con le cifre invertite (es. 123 → 321).
 
-// 22) scrivere una fuzione che dati in input una stringa e un numero,logghi la stringa tante volte quante il numereo dato;
+//<-------------------------------------------------------------------------------------------------------->
 
-function stringMultiplier(string, number) {
-  for (let i = 0; i < number; i++) {
-    console.log(string);
-  }
-}
+//25) Tabellina
+//Scrivi una funzione tabellina che prenda un numero come parametro e stampi in console la tabellina di quel numero fino a 10.
 
-const stringaMoltiplicata = stringMultiplier("aceite ", 6);
-console.log(stringaMoltiplicata);
+//<-------------------------------------------------------------------------------------------------------->
 
-const stringMultiplierLambda = (string, number) => { for (let i = 0; i < number; i++) { console.log(string); } }
-const stringaMoltiplicataLambda = stringMultiplierLambda("cioccolato", 4);
-console.log(stringaMoltiplicataLambda);
+//26) Fibonacci
+//Scrivi una funzione fibonacci che prenda un numero N come parametro e restituisca l’N-esimo numero della sequenza di Fibonacci.
+
+//<-------------------------------------------------------------------------------------------------------->
+
+//27)  Conteggio vocali
+//Scrivi una funzione contaVocali che prenda una stringa come parametro e restituisca il numero di vocali presenti.
+
+//<-------------------------------------------------------------------------------------------------------->
+
+//28) Sconto
+//Scrivi una funzione applicaSconto che prenda due numeri come parametri (prezzo e percentuale di sconto) e restituisca il prezzo scontato.
+
+//<-------------------------------------------------------------------------------------------------------->
+
+//29) Conversione gradi
+//Scrivi una funzione convertiGradi che prenda un numero come parametro (gradi Celsius) e restituisca la conversione in Fahrenheit
+
+//<-------------------------------------------------------------------------------------------------------->
+
+//30) Verifica password
+//Scrivi una funzione verificaPassword che prenda una stringa e restituisca true se:
+// - Ha almeno 8 caratteri
+// - Contiene almeno una lettera maiuscola
+// - Contiene almeno un carattere speciale tra questi '!#@$%'
+// - Non contiene la parola 'cacca'
