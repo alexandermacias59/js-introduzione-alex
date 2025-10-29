@@ -454,238 +454,268 @@
 
 // Funzione che conta quante volte un certo carattere compare in una stringa
 
-function contaCarattere(stringa, carattere) {
-  let conteggio = 0;
-  for (let i = 0; i < stringa.length; i++) {
-    if (stringa[i] === carattere) {
-      conteggio++;
-    }
-  }
-  return conteggio;
-}
+// function contaCarattere(stringa, carattere) {
+//   let conteggio = 0;
+//   for (let i = 0; i < stringa.length; i++) {
+//     if (stringa[i] === carattere) {
+//       conteggio++;
+//     }
+//   }
+//   return conteggio;
+// }
 
-// Funzione che conta solo le "B" maiuscole, usando la funzione sopra
+// // Funzione che conta solo le "B" maiuscole, usando la funzione sopra
 
-function contaB(stringa) {
-  return contaCarattere(stringa, "B");
-}
+// function contaB(stringa) {
+//   return contaCarattere(stringa, "B");
+// }
 
-// Esempi di test
-console.log(contaB("BuBuBani"));              // 3
-console.log(contaCarattere("Ciao mondo", "o")); // 2
-console.log(contaCarattere("Banana", "a"));     // 3
+// // Esempi di test
+// console.log(contaB("BuBuBani"));              // 3
+// console.log(contaCarattere("Ciao mondo", "o")); // 2
+// console.log(contaCarattere("Banana", "a"));     // 3
 
-//<-------------------------------------------------------------------------------------------------------->
+// //<-------------------------------------------------------------------------------------------------------->
 
-//24) Inversione di un numero
-//Scrivi una funzione invertiNumero che prenda un numero come parametro e restituisca il numero con le cifre invertite (es. 123 → 321).
+// //24) Inversione di un numero
+// //Scrivi una funzione invertiNumero che prenda un numero come parametro e restituisca il numero con le cifre invertite (es. 123 → 321).
 
-function reverseNumber(n) {
+// function reverseNumber(n) {
 
-  let string = n.toString();
-  let rev = string.split('').reverse().join('');
+//   let string = n.toString();
+//   let rev = string.split('').reverse().join('');
   
-  return parseInt(rev);
-}
-console.log(reverseNumber(123)); 
+//   return parseInt(rev);
+// }
+// console.log(reverseNumber(123)); 
 
-//correzione in classe
+// //correzione in classe
 
-function reverseNumber(nbr){
-  const nbrToString = String(nbr);
-  let rev = "";
-  for (let i= nbrToString.length -1; i >= 0; i--){
-    const char = nbrToString[i];
-    rev += char;
-  }
-   const revToNumber = Number(rev);
-   return revToNumber;
-}
-console.log(reverseNumber(123456));
+// function reverseNumber(nbr){
+//   const nbrToString = String(nbr);
+//   let rev = "";
+//   for (let i= nbrToString.length -1; i >= 0; i--){
+//     const char = nbrToString[i];
+//     rev += char;
+//   }
+//    const revToNumber = Number(rev);
+//    return revToNumber;
+// }
+// console.log(reverseNumber(123456));
 
-//<-------------------------------------------------------------------------------------------------------->
+// //<-------------------------------------------------------------------------------------------------------->
 
-//25) Tabellina
-//Scrivi una funzione tabellina che prenda un numero come parametro e stampi in console la tabellina di quel numero fino a 10.
+// //25) Tabellina
+// //Scrivi una funzione tabellina che prenda un numero come parametro e stampi in console la tabellina di quel numero fino a 10.
 
-function tabellina(n) {
-  for (let i = 1; i <=10; i++) {
-      console.log(n * i);
-  }
-}
-console.log(tabellina(Math.floor(Math.random() * 10)));
+// function tabellina(n) {
+//   for (let i = 1; i <=10; i++) {
+//       console.log(n * i);
+//   }
+// }
+// console.log(tabellina(Math.floor(Math.random() * 10)));
 
-//<-------------------------------------------------------------------------------------------------------->
+// //<-------------------------------------------------------------------------------------------------------->
 
-//26) Fibonacci
-//Scrivi una funzione fibonacci che prenda un numero N come parametro e restituisca l’N-esimo numero della sequenza di Fibonacci.
+// //26) Fibonacci
+// //Scrivi una funzione fibonacci che prenda un numero N come parametro e restituisca l’N-esimo numero della sequenza di Fibonacci.
 
-function fibonacci(n) {
-  if (n <= 0) return 0;
-  if (n === 1) return 1;
-  let a = 0;
-  let b = 1;
+// function fibonacci(n) {
+//   if (n <= 0) return 0;
+//   if (n === 1) return 1;
+//   let a = 0;
+//   let b = 1;
 
-  for (let i = 2; i <= n; i++) {
-    let temp = a + b;
-    a = b;
-    b = temp;
-  }
-  return b;
-}
-console.log(fibonacci(7)); 
+//   for (let i = 2; i <= n; i++) {
+//     let temp = a + b;
+//     a = b;
+//     b = temp;
+//   }
+//   return b;
+// }
+// console.log(fibonacci(7)); 
 
-//<-------------------------------------------------------------------------------------------------------->
+// //<-------------------------------------------------------------------------------------------------------->
 
-//27)  Conteggio vocali
-//Scrivi una funzione contaVocali che prenda una stringa come parametro e restituisca il numero di vocali presenti.
+// //27)  Conteggio vocali
+// //Scrivi una funzione contaVocali che prenda una stringa come parametro e restituisca il numero di vocali presenti.
 
-function contaVocali(str) {
-  let counter = 0;                   // tiene il conto delle vocali trovate
-  const vocali = "aeiouAEIOU";         // elenco di tutte le vocali
+// function contaVocali(str) {
+//   let counter = 0;                   // tiene il conto delle vocali trovate
+//   const vocali = "aeiouAEIOU";         // elenco di tutte le vocali
 
-  for (let i = 0; i < str.length; i++) {
-    if (vocali.includes(str[i])) { 
-      counter++;
-    }
-  }
+//   for (let i = 0; i < str.length; i++) {
+//     if (vocali.includes(str[i])) { 
+//       counter++;
+//     }
+//   }
 
-  return counter;                    // numero totale di vocali
-}
+//   return counter;                    // numero totale di vocali
+// }
 
-console.log(contaVocali("Cioccolato"));
+// console.log(contaVocali("Cioccolato"));
 
-//<-------------------------------------------------------------------------------------------------------->
+// //<-------------------------------------------------------------------------------------------------------->
 
-//28) Sconto
-//Scrivi una funzione applicaSconto che prenda due numeri come parametri (prezzo e percentuale di sconto) e restituisca il prezzo scontato.
-function applicaSconto(numero,sconto) {
-  let prezzoScontato = numero - (numero * sconto)/100;
- return prezzoScontato;
-}
-console.log(applicaSconto(2000,20))
+// //28) Sconto
+// //Scrivi una funzione applicaSconto che prenda due numeri come parametri (prezzo e percentuale di sconto) e restituisca il prezzo scontato.
+// function applicaSconto(numero,sconto) {
+//   let prezzoScontato = numero - (numero * sconto)/100;
+//  return prezzoScontato;
+// }
+// console.log(applicaSconto(2000,20))
 
-//<-------------------------------------------------------------------------------------------------------->
+// //<-------------------------------------------------------------------------------------------------------->
 
-//29) Conversione gradi
-//Scrivi una funzione convertiGradi che prenda un numero come parametro (gradi Celsius) e restituisca la conversione in Fahrenheit
-
-
-function convertiGradi(cDeg) {
-  let fDeg = (cDeg * 1.8) + 32;
-  console.log(cDeg +" Gradi Celsius")
-  return fDeg;
-}
-console.log(convertiGradi(100) + " Gradi Fahreinheit");
-
-//<-------------------------------------------------------------------------------------------------------->
-
-//30) Verifica password
-//Scrivi una funzione verificaPassword che prenda una stringa e restituisca true se:
-// - Ha almeno 8 caratteri
-// - Contiene almeno una lettera maiuscola
-// - Contiene almeno un carattere speciale tra questi '!#@$%'
-// - Non contiene la parola 'cacca'
-
-function verificaPassword(password) {
-  // Controlla che abbia almeno 8 caratteri
-  const lunghezzaValida = password.length >= 8;
-
-  // Controlla che ci sia almeno una lettera maiuscola
-  const haMaiuscola = /[A-Z]/.test(password);
-
-  // Controlla che ci sia almeno un carattere speciale tra ! # @ $ %
-  const haSpeciale = /[!#@$%]/.test(password);
-
-  // Controlla che NON contenga la parola "cacca" (ignorando maiuscole/minuscole)
-  const contieneCacca = /cacca/i.test(password);
-
-  // Tutte le condizioni devono essere vere, tranne quella di "cacca"
-  return lunghezzaValida && haMaiuscola && haSpeciale && !contieneCacca;
-}
-
-// Esempi di test
-console.log(verificaPassword("Abcdef!1"));     // true 
-console.log(verificaPassword("abcdef!1"));     // false (manca maiuscola)
-console.log(verificaPassword("Abcdefgh"));     // false (manca carattere speciale)
-console.log(verificaPassword("Cacca123!"));    // false (contiene "cacca")
-
-//corretto in classe
+// //29) Conversione gradi
+// //Scrivi una funzione convertiGradi che prenda un numero come parametro (gradi Celsius) e restituisca la conversione in Fahrenheit
 
 
-function hasSpecialCharacters(str){
-    if (password.includes("!")
-        || password.includes('#')
-        || password.includes('@')
-        || password.includes('$')
-        || password.includes('%')) {
-        return true;
-    } else {
-        return false;
-    }
-}
+// function convertiGradi(cDeg) {
+//   let fDeg = (cDeg * 1.8) + 32;
+//   console.log(cDeg +" Gradi Celsius")
+//   return fDeg;
+// }
+// console.log(convertiGradi(100) + " Gradi Fahreinheit");
 
-function containsUppercaseChar(str){
-    if (str.toLowerCase() === str) {
-        return false;
-    } else {
-        return true;
-    }
-}
+// //<-------------------------------------------------------------------------------------------------------->
 
-function isTooShort(str){
-    if(str.length < 8){
-        return true;
-    } else {
-        return false;
-    }
-}
+// //30) Verifica password
+// //Scrivi una funzione verificaPassword che prenda una stringa e restituisca true se:
+// // - Ha almeno 8 caratteri
+// // - Contiene almeno una lettera maiuscola
+// // - Contiene almeno un carattere speciale tra questi '!#@$%'
+// // - Non contiene la parola 'cacca'
 
-function containsCacca(str){
-    if(str.includes('cacca')){
-        return true;
-    } else {
-        return false;
-    }
-}
+// function verificaPassword(password) {
+//   // Controlla che abbia almeno 8 caratteri
+//   const lunghezzaValida = password.length >= 8;
 
-function checkPassword(password) {
-    // if(password.length < 8){
-    //     return false;
-    // } else {
-    //     if(password.toLowerCase() === password){
-    //         return false;
-    //     } else {
-    //         if (password.includes("!")
-    //         || password.includes('#')
-    //         || password.includes('@')
-    //         || password.includes('$')
-    //         || password.includes('%')) {
-    //             if (password.includes('cacca')) {
-    //                 return false;
-    //             } else {
-    //                 return true;
-    //             }
-    //         } else {
-    //             return false;
-    //         }
-    //     }
-    // }
+//   // Controlla che ci sia almeno una lettera maiuscola
+//   const haMaiuscola = /[A-Z]/.test(password);
 
-    if (isTooShort(password)) {
-        return false;
-    } else if (!containsUppercaseChar(password)){
-        return false;
-    } else if (!hasSpecialCharacters(password)){
-        return false;
-    } else if (containsCacca(password)) {
-        return false;
-    } else {
-        return true;
-    }
-}
+//   // Controlla che ci sia almeno un carattere speciale tra ! # @ $ %
+//   const haSpeciale = /[!#@$%]/.test(password);
+
+//   // Controlla che NON contenga la parola "cacca" (ignorando maiuscole/minuscole)
+//   const contieneCacca = /cacca/i.test(password);
+
+//   // Tutte le condizioni devono essere vere, tranne quella di "cacca"
+//   return lunghezzaValida && haMaiuscola && haSpeciale && !contieneCacca;
+// }
+
+// // Esempi di test
+// console.log(verificaPassword("Abcdef!1"));     // true 
+// console.log(verificaPassword("abcdef!1"));     // false (manca maiuscola)
+// console.log(verificaPassword("Abcdefgh"));     // false (manca carattere speciale)
+// console.log(verificaPassword("Cacca123!"));    // false (contiene "cacca")
+
+// //corretto in classe
 
 
-console.log(checkPassword('caccacaccacacca'));
-console.log(checkPassword('Leonardo!'));
-//--------------------------------------------------
+// function hasSpecialCharacters(str){
+//     if (password.includes("!")
+//         || password.includes('#')
+//         || password.includes('@')
+//         || password.includes('$')
+//         || password.includes('%')) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function containsUppercaseChar(str){
+//     if (str.toLowerCase() === str) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
+
+// function isTooShort(str){
+//     if(str.length < 8){
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function containsCacca(str){
+//     if(str.includes('cacca')){
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function checkPassword(password) {
+//     // if(password.length < 8){
+//     //     return false;
+//     // } else {
+//     //     if(password.toLowerCase() === password){
+//     //         return false;
+//     //     } else {
+//     //         if (password.includes("!")
+//     //         || password.includes('#')
+//     //         || password.includes('@')
+//     //         || password.includes('$')
+//     //         || password.includes('%')) {
+//     //             if (password.includes('cacca')) {
+//     //                 return false;
+//     //             } else {
+//     //                 return true;
+//     //             }
+//     //         } else {
+//     //             return false;
+//     //         }
+//     //     }
+//     // }
+
+//     if (isTooShort(password)) {
+//         return false;
+//     } else if (!containsUppercaseChar(password)){
+//         return false;
+//     } else if (!hasSpecialCharacters(password)){
+//         return false;
+//     } else if (containsCacca(password)) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
+
+
+// console.log(checkPassword('caccacaccacacca'));
+// console.log(checkPassword('Leonardo!'));
+
+
+// //<-------------------------------------------------------------------------------------------------------->
+
+//31) Somma dei numeri fino a n
+// Scrivi una funzione sommaFinoAN(n) che restituisce la somma dei numeri da 1 a n.
+// sommaFinoAN(5) -> 1 + 2 + 3 + 4 + 5 -> 15
+// 32) Conteggio cifre
+// Scrivi una funzione contaCifre(num) che restituisce il numero di cifre di un numero
+// contaCifre(5) -> 1
+// contaCifre(1245) -> 4
+// 33) Somma delle cifre
+// Scrivi una funzione sommaCifre(num) che restituisce la somma delle cifre di un numero
+// sommaCifre(5) -> 5
+// sommaCifre(1245) -> 12
+// 34) Conversione valuta
+// Scrivi una funzione euroToDollaro(euro) che converte un importo in euro in dollari (1 euro = 1.1 dollari).
+// 35) Calcolo area rettangolo
+// Scrivi una funzione areaRettangolo(base, altezza) che restituisce l’area di un rettangolo.
+// 36) Calcolo media
+// Scrivi una funzione media(a, b, c) che restituisce la media di tre numeri.
+// 37) Generatore di password casuale
+// Scrivi una funzione generaPasswordCasuale() che restituisce una password di 8 caratteri usando solo lettere maiuscole e numeri (usa Math.random())
+// 38) Potenza con ciclo
+// Scrivi una funzione potenzaCiclo(base, esponente) che calcola la potenza usando un ciclo.
+// 39) Scrivi un validatore di email con queste regole:
+// -deve contenere una @
+// -deve contenere un punto posizionato dopo la @
+// -le parti di testo prima della @ e tra la @ e il punto devono almeno avere tre lettere
+// -il punto non può essere l'ultimo carattere
+// 40) crea un converitore tra italiano e farfallino(https://it.wikipedia.org/wiki/Alfabeto_farfallino)
