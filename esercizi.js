@@ -453,19 +453,19 @@
 //Next, write a function called countChar that behaves like countBs, except it takes a second argument that indicates the character that is to be counted (rather than counting only uppercase B characters). Rewrite countBs to make use of this new function.
 
 // Funzione che conta quante volte un certo carattere compare in una stringa
+
 function contaCarattere(stringa, carattere) {
   let conteggio = 0;
-
   for (let i = 0; i < stringa.length; i++) {
     if (stringa[i] === carattere) {
       conteggio++;
     }
   }
-
   return conteggio;
 }
 
 // Funzione che conta solo le "B" maiuscole, usando la funzione sopra
+
 function contaB(stringa) {
   return contaCarattere(stringa, "B");
 }
@@ -481,29 +481,39 @@ console.log(contaCarattere("Banana", "a"));     // 3
 //Scrivi una funzione invertiNumero che prenda un numero come parametro e restituisca il numero con le cifre invertite (es. 123 → 321).
 
 function reverseNumber(n) {
+
   let string = n.toString();
-  
   let rev = string.split('').reverse().join('');
   
   return parseInt(rev);
 }
-
 console.log(reverseNumber(123)); 
 
+//correzione in classe
+
+function reverseNumber(nbr){
+  const nbrToString = String(nbr);
+  let rev = "";
+  for (let i= nbrToString.length -1; i >= 0; i--){
+    const char = nbrToString[i];
+    rev += char;
+  }
+   const revToNumber = Number(rev);
+   return revToNumber;
+}
+console.log(reverseNumber(123456));
 
 //<-------------------------------------------------------------------------------------------------------->
 
 //25) Tabellina
 //Scrivi una funzione tabellina che prenda un numero come parametro e stampi in console la tabellina di quel numero fino a 10.
+
 function tabellina(n) {
   for (let i = 1; i <=10; i++) {
       console.log(n * i);
   }
 }
 console.log(tabellina(Math.floor(Math.random() * 10)));
-
-
-
 
 //<-------------------------------------------------------------------------------------------------------->
 
@@ -521,10 +531,8 @@ function fibonacci(n) {
     a = b;
     b = temp;
   }
-
   return b;
 }
-
 console.log(fibonacci(7)); 
 
 //<-------------------------------------------------------------------------------------------------------->
@@ -537,27 +545,22 @@ function contaVocali(str) {
   const vocali = "aeiouAEIOU";         // elenco di tutte le vocali
 
   for (let i = 0; i < str.length; i++) {
-    if (vocali.includes(str[i])) { // controlla se il carattere è una vocale
+    if (vocali.includes(str[i])) { 
       counter++;
     }
   }
 
-  return counter;                    // restituisce il numero totale di vocali
+  return counter;                    // numero totale di vocali
 }
 
 console.log(contaVocali("Cioccolato"));
-
-
 
 //<-------------------------------------------------------------------------------------------------------->
 
 //28) Sconto
 //Scrivi una funzione applicaSconto che prenda due numeri come parametri (prezzo e percentuale di sconto) e restituisca il prezzo scontato.
-
-
-
 function applicaSconto(numero,sconto) {
-  let prezzoScontato = numero - (numero * sconto)/100
+  let prezzoScontato = numero - (numero * sconto)/100;
  return prezzoScontato;
 }
 console.log(applicaSconto(2000,20))
@@ -584,12 +587,6 @@ console.log(convertiGradi(100) + " Gradi Fahreinheit");
 // - Contiene almeno un carattere speciale tra questi '!#@$%'
 // - Non contiene la parola 'cacca'
 
-// let stringa = "";
-// if (stringa.length === 8) { console.log(true)};
-// if (stringa.includes("cacca")) {
-//   console.log(false);
-// }
-
 function verificaPassword(password) {
   // Controlla che abbia almeno 8 caratteri
   const lunghezzaValida = password.length >= 8;
@@ -612,3 +609,83 @@ console.log(verificaPassword("Abcdef!1"));     // true
 console.log(verificaPassword("abcdef!1"));     // false (manca maiuscola)
 console.log(verificaPassword("Abcdefgh"));     // false (manca carattere speciale)
 console.log(verificaPassword("Cacca123!"));    // false (contiene "cacca")
+
+//corretto in classe
+
+
+function hasSpecialCharacters(str){
+    if (password.includes("!")
+        || password.includes('#')
+        || password.includes('@')
+        || password.includes('$')
+        || password.includes('%')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function containsUppercaseChar(str){
+    if (str.toLowerCase() === str) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function isTooShort(str){
+    if(str.length < 8){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function containsCacca(str){
+    if(str.includes('cacca')){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function checkPassword(password) {
+    // if(password.length < 8){
+    //     return false;
+    // } else {
+    //     if(password.toLowerCase() === password){
+    //         return false;
+    //     } else {
+    //         if (password.includes("!")
+    //         || password.includes('#')
+    //         || password.includes('@')
+    //         || password.includes('$')
+    //         || password.includes('%')) {
+    //             if (password.includes('cacca')) {
+    //                 return false;
+    //             } else {
+    //                 return true;
+    //             }
+    //         } else {
+    //             return false;
+    //         }
+    //     }
+    // }
+
+    if (isTooShort(password)) {
+        return false;
+    } else if (!containsUppercaseChar(password)){
+        return false;
+    } else if (!hasSpecialCharacters(password)){
+        return false;
+    } else if (containsCacca(password)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+console.log(checkPassword('caccacaccacacca'));
+console.log(checkPassword('Leonardo!'));
+//--------------------------------------------------
