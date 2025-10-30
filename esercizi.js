@@ -697,6 +697,13 @@
 // sommaFinoAN(5) -> 1 + 2 + 3 + 4 + 5 -> 15
 // 32) Conteggio cifre
 // Scrivi una funzione contaCifre(num) che restituisce il numero di cifre di un numero
+function contaCifre(number) {
+    const numberToString = String(number);
+    const numeroCifre = numberToString.length;
+    return numeroCifre;
+}
+console.log(contaCifre(123453345356));
+
 // contaCifre(5) -> 1
 // contaCifre(1245) -> 4
 // 33) Somma delle cifre
