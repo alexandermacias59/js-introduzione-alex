@@ -695,6 +695,20 @@
 //31) Somma dei numeri fino a n
 // Scrivi una funzione sommaFinoAN(n) che restituisce la somma dei numeri da 1 a n.
 // sommaFinoAN(5) -> 1 + 2 + 3 + 4 + 5 -> 15
+
+function sommaFinoAN(n) {
+  let somma = 0;
+
+  for (let i = 1; i <= n; i++) {
+    somma = somma + i;
+  }
+  return somma;
+}
+console.log("La somma è " + sommaFinoAN(5)); // Output: 15 (1+2+3+4+5)
+
+
+// //<-------------------------------------------------------------------------------------------------------->
+
 // 32) Conteggio cifre
 // Scrivi una funzione contaCifre(num) che restituisce il numero di cifre di un numero
 function contaCifre(number) {
@@ -702,10 +716,10 @@ function contaCifre(number) {
     const numeroCifre = numberToString.length;
     return numeroCifre;
 }
-console.log(contaCifre(123453345356));
+console.log("Ci sono " + contaCifre(123453345356) + " cifre");
 
-// contaCifre(5) -> 1
-// contaCifre(1245) -> 4
+// //<-------------------------------------------------------------------------------------------------------->
+
 // 33) Somma delle cifre
 // Scrivi una funzione sommaCifre(num) che restituisce la somma delle cifre di un numero
  function sommaCifre(n){
@@ -716,9 +730,10 @@ console.log(contaCifre(123453345356));
     }
     return sommaNum;
  }
- console.log(sommaCifre(3456744));
-// sommaCifre(5) -> 5
-// sommaCifre(1245) -> 12
+ console.log("La somma delle cifre è " + sommaCifre(3456744));
+
+ // //<-------------------------------------------------------------------------------------------------------->
+
 // 34) Conversione valuta
 // Scrivi una funzione euroToDollaro(euro) che converte un importo in euro in dollari (1 euro = 1.1 dollari).
 function euroToDollaro(euro) {
@@ -730,6 +745,8 @@ function euroToDollaro(euro) {
 
 console.log(euroToDollaro(25) + " $");
 
+// //<-------------------------------------------------------------------------------------------------------->
+
 // 35) Calcolo area rettangolo
 // Scrivi una funzione areaRettangolo(base, altezza) che restituisce l’area di un rettangolo.
 function areaRettangolo(base,altezza){
@@ -738,6 +755,8 @@ function areaRettangolo(base,altezza){
 }
 console.log("L'area del rettangolo è " + areaRettangolo(12,22));
 
+// //<-------------------------------------------------------------------------------------------------------->
+
 // 36) Calcolo media
 // Scrivi una funzione media(a, b, c) che restituisce la media di tre numeri.
 function calcoloMedia(a,b,c) {
@@ -745,6 +764,9 @@ function calcoloMedia(a,b,c) {
     return operazione;
 }
 console.log("La media dei 3 numeri è " + calcoloMedia(25,30,15));
+
+// //<-------------------------------------------------------------------------------------------------------->
+
 // 37) Generatore di password casuale
 // Scrivi una funzione generaPasswordCasuale() che restituisce una password di 8 caratteri usando solo lettere maiuscole e numeri (usa Math.random())
 
@@ -754,7 +776,6 @@ function generaPasswordCasuale() {
 
   for (let i = 0; i < lunghezza; i++) {
     const typeNOrS = Math.random(); // decide se generare lettera o numero
-
     if (typeNOrS < 0.5) {
       // lettera maiuscola (A-Z)
       const codice = Math.floor(Math.random() * 26) + 65;
@@ -765,21 +786,85 @@ function generaPasswordCasuale() {
       password += cifra;
     }
   }
-
   return password;
 }
+console.log("La tua password è: " + generaPasswordCasuale());
 
-// esempio di uso
-console.log(generaPasswordCasuale());
+// //<-------------------------------------------------------------------------------------------------------->
 
 // 38) Potenza con ciclo
 // Scrivi una funzione potenzaCiclo(base, esponente) che calcola la potenza usando un ciclo.
+
+function potenzaCiclo(base, esponente) {
+  let risultato = 1;
+
+  for (let i = 0; i < esponente; i++) {
+    risultato *= base; // moltiplica il risultato per la base ogni volta
+  }
+
+  return risultato;
+}
+console.log(potenzaCiclo(2, 3)); 
+
+// //<-------------------------------------------------------------------------------------------------------->
+
 // 39) Scrivi un validatore di email con queste regole:
 // -deve contenere una @
 // -deve contenere un punto posizionato dopo la @
 // -le parti di testo prima della @ e tra la @ e il punto devono almeno avere tre lettere
 // -il punto non può essere l'ultimo carattere
-// 40) crea un converitore tra italiano e farfallino(https://it.wikipedia.org/wiki/Alfabeto_farfallino)
+
+function validaEmail(email) {
+  let haChiocciola = false;
+  let haPuntoDopoChiocciola = false;
+  let indiceChiocciola = -1;
+  let indicePunto = -1;
+  // 1) trovare '@' e '.'
+  for (let i = 0; i < email.length; i++) {
+    if (email[i] === '@') {
+      if (haChiocciola) return false; // più di una '@'
+      haChiocciola = true;
+      indiceChiocciola = i;
+    }
+    if (haChiocciola && email[i] === '.' && indicePunto === -1) {
+      haPuntoDopoChiocciola = true;
+      indicePunto = i;
+    }
+  }
+  // 2) controlli base
+  if (!haChiocciola) return false;                  // manca la @
+  if (!haPuntoDopoChiocciola) return false;         // manca un punto dopo la @
+  if (indicePunto === email.length - 1) return false; // punto finale
+  // 3) contare lettere prima della @
+  let letterePrima = 0;
+  for (let i = 0; i < indiceChiocciola; i++) {
+    const c = email[i];
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+      letterePrima++;
+    }
+  }
+  if (letterePrima < 3) return false;
+  // 4) contare lettere tra @ e punto
+  let lettereTra = 0;
+  for (let i = indiceChiocciola + 1; i < indicePunto; i++) {
+    const c = email[i];
+    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+      lettereTra++;
+    }
+  }
+  if (lettereTra < 3) return false;
+
+  return true; // tutte le regole rispettate
+}
+console.log(validaEmail("abc@def.com"));  //  true
+console.log(validaEmail("ab@def.com"));   //  false (solo 2 lettere prima)
+console.log(validaEmail("abc@de.com"));   //  false (solo 2 lettere tra @ e .)
+console.log(validaEmail("abc@def."));     //  false (punto finale)
+console.log(validaEmail("abc@@def.com")); //  false (due @)
+
+// //<-------------------------------------------------------------------------------------------------------->
+
+// 40) crea un convertitore tra italiano e farfallino(https://it.wikipedia.org/wiki/Alfabeto_farfallino)
 
 function farfallinoConvert(text) {
   const vowels = "aeiouAEIOU";
@@ -798,6 +883,6 @@ function farfallinoConvert(text) {
   return result;
 }
 
-// Esempi:
-console.log(farfallinoConvert("ciao"));     // => "cifiafaofo"
-console.log(farfallinoConvert("Vacanze"));  // => "Vafacafanzefe"
+
+console.log(farfallinoConvert("Aereoplano"));     
+console.log(farfallinoConvert("Vacanze"));  
