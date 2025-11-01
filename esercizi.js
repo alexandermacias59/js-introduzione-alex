@@ -708,16 +708,70 @@ console.log(contaCifre(123453345356));
 // contaCifre(1245) -> 4
 // 33) Somma delle cifre
 // Scrivi una funzione sommaCifre(num) che restituisce la somma delle cifre di un numero
+ function sommaCifre(n){
+    const nToString = String(n);
+    let sommaNum = 0;
+    for (let i = 0; i < nToString.length; i++) {
+        sommaNum += Number(nToString[i]);
+    }
+    return sommaNum;
+ }
+ console.log(sommaCifre(3456744));
 // sommaCifre(5) -> 5
 // sommaCifre(1245) -> 12
 // 34) Conversione valuta
 // Scrivi una funzione euroToDollaro(euro) che converte un importo in euro in dollari (1 euro = 1.1 dollari).
+function euroToDollaro(euro) {
+    let dollaro = 1.16;
+    let opConversione = euro * dollaro;
+    let conversione = opConversione * dollaro;
+    return conversione;
+}
+
+console.log(euroToDollaro(25) + " $");
+
 // 35) Calcolo area rettangolo
 // Scrivi una funzione areaRettangolo(base, altezza) che restituisce l’area di un rettangolo.
+function areaRettangolo(base,altezza){
+    let area = base * altezza;
+    return area;
+}
+console.log("L'area del rettangolo è " + areaRettangolo(12,22));
+
 // 36) Calcolo media
 // Scrivi una funzione media(a, b, c) che restituisce la media di tre numeri.
+function calcoloMedia(a,b,c) {
+    let operazione = (a + b + c) / 3;
+    return operazione;
+}
+console.log("La media dei 3 numeri è " + calcoloMedia(25,30,15));
 // 37) Generatore di password casuale
 // Scrivi una funzione generaPasswordCasuale() che restituisce una password di 8 caratteri usando solo lettere maiuscole e numeri (usa Math.random())
+
+function generaPasswordCasuale() {
+  let password = "";
+  const lunghezza = 8;
+
+  for (let i = 0; i < lunghezza; i++) {
+    const typeNOrS = Math.random(); // decide se generare lettera o numero
+
+    if (typeNOrS < 0.5) {
+      // lettera maiuscola (A-Z)
+      const codice = Math.floor(Math.random() * 26) + 65;
+      password += String.fromCharCode(codice);
+    } else {
+      // numero (0-9)
+      const cifra = Math.floor(Math.random() * 10);
+      password += cifra;
+    }
+  }
+
+  return password;
+}
+
+// esempio di uso
+console.log(generaPasswordCasuale());
+
 // 38) Potenza con ciclo
 // Scrivi una funzione potenzaCiclo(base, esponente) che calcola la potenza usando un ciclo.
 // 39) Scrivi un validatore di email con queste regole:
@@ -726,3 +780,24 @@ console.log(contaCifre(123453345356));
 // -le parti di testo prima della @ e tra la @ e il punto devono almeno avere tre lettere
 // -il punto non può essere l'ultimo carattere
 // 40) crea un converitore tra italiano e farfallino(https://it.wikipedia.org/wiki/Alfabeto_farfallino)
+
+function farfallinoConvert(text) {
+  const vowels = "aeiouAEIOU";
+  let result = "";
+  for (const ch of text) {
+    if (vowels.includes(ch)) {
+      if (ch === ch.toUpperCase()) {
+        result += ch + "F" + ch;
+      } else {
+        result += ch + "f" + ch;
+      }
+    } else {
+      result += ch;
+    }
+  }
+  return result;
+}
+
+// Esempi:
+console.log(farfallinoConvert("ciao"));     // => "cifiafaofo"
+console.log(farfallinoConvert("Vacanze"));  // => "Vafacafanzefe"
