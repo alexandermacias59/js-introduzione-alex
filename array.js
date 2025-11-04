@@ -199,73 +199,181 @@ let strings = ['pippo', 'pluto', 'topolino', 'leonardo', 'Pippo'];
 //fare una funzione che rimuove dall'array tutti i numeri dispari
 
 
-function removeOddNumbers(nArray){
-    const newArray = [];
-    for (let i = 0; i < nArray.length; i++) {
-        const element = nArray[i];
-        if ( element % 2 === 0){
-            newArray.push(element);
-        }
+// function removeOddNumbers(nArray){
+//     const newArray = [];
+//     for (let i = 0; i < nArray.length; i++) {
+//         const element = nArray[i];
+//         if ( element % 2 === 0){
+//             newArray.push(element);
+//         }
         
-    }
-    return newArray;
-}
-console.log(removeOddNumbers(numbers));
+//     }
+//     return newArray;
+// }
+// console.log(removeOddNumbers(numbers));
 
 
 // scrivere una funzione che rimuova da un array di stringhe tutte quelle che iniziano per p
-function removeStartingWithP(strArray) {
-    const newArray = [];
-    for (let i = 0;  i < strArray.length; i++) {
-        const element = strArray[i];
-        const firstChar = element[0];
-        const firstCharLower = firstChar.toLowerCase()
-        if (firstCharLower !== 'p'){
-            newArray.push(element);
-        }
+// function removeStartingWithP(strArray) {
+//     const newArray = [];
+//     for (let i = 0;  i < strArray.length; i++) {
+//         const element = strArray[i];
+//         const firstChar = element[0];
+//         const firstCharLower = firstChar.toLowerCase()
+//         if (firstCharLower !== 'p'){
+//             newArray.push(element);
+//         }
         
-    } return newArray;
-}
-console.log(removeStartingWithP(strings));
+//     } return newArray;
+// }
+// console.log(removeStartingWithP(strings));
 
 //rimuovi numeri negativi
 
-function removeNegativesNumbers(nArray){
-    const newArray = [];
-    for (let i = 0; i < nArray.length; i++) {
-        const element = nArray[i];
-        if ( element < 0){
-            newArray.push(element);
-        }
+// function removeNegativesNumbers(nArray){
+//     const newArray = [];
+//     for (let i = 0; i < nArray.length; i++) {
+//         const element = nArray[i];
+//         if ( element < 0){
+//             newArray.push(element);
+//         }
         
-    }
-    return newArray;
-}
-console.log(removeNegativesNumbers(numbers));
+//     }
+//     return newArray;
+// }
+// console.log(removeNegativesNumbers(numbers));
 
 //REDUCE = trasforma l'array producendo un risultato che dipende dai componenti dell'array
 
 // 1- Scrivere una funzione che smma tutti i numeri di un array di numeri
 
-function sumAll(nArray){
-    let result = 0;
-    for (let i = 0; i < nArray.length; i++) {
-        const element = nArray[i];
-        result = result + element;
-    } return result;
-}
+// function sumAll(nArray){
+//     let result = 0;
+//     for (let i = 0; i < nArray.length; i++) {
+//         const element = nArray[i];
+//         result = result + element;
+//     } return result;
+// }
 
-console.log(sumAll(numbers));
+// console.log(sumAll(numbers));
 
 // 2- Scrivi una funzione che calcola la media di un array di numeri
 
-function calculateMean(nArray){
-     let result = 0;
-    for (let i = 0; i < nArray.length; i++) {
-        const element = nArray[i];
-        result = result + element;
-    } 
-    const mean = result / nArray.length;
-    return mean;
+// function calculateMean(nArray){
+//      let result = 0;
+//     for (let i = 0; i < nArray.length; i++) {
+//         const element = nArray[i];
+//         result = result + element;
+//     } 
+//     const mean = result / nArray.length;
+//     return mean;
+// }
+// console.log(calculateMean(numbers));
+
+//3- scrivere una funzione che genera una stringa composta dalle iniziali delle stringhe contenute in un array
+
+// function concatFirstChar(strArray){
+//     let newString = '';
+//     for (let i = 0; i < strArray.length; i++) {
+//         const element = strArray[i];
+//         const firstChar = element[0];
+//         newString = newString + firstChar;
+        
+//     } return newString;
+// }
+// console.log(concatFirstChar(strings));
+
+// 4- Scrivere una funzione che restituisce la somma delle lunghezze delle stringhe di un array
+
+// function sumLength(strArray){
+//     const sumOfLengths = 0;
+//     for (let i = 0; i < strArray.length; i++) {
+//         const element = strArray[i];
+//         const length = element.length;
+//         sumOfLengths = sumOfLengths + length;
+//     }
+//     return sumOfLengths;
+// }
+// console.log(sumLength(strings));
+
+//5- scrivere una funzione che trova il numero piu grande in un array
+
+// function findMax(nArray) {
+//     let max = 0;
+//     for (let i = 0; i < nArray.length; i++) {
+//         const element = nArray[i];
+//         if (element > max) {
+//             max = element;
+//         }
+        
+//     }
+//     return max;
+// }
+// console.log(findMax(numbers));
+
+//COSTRUTTORE
+
+// const pluti = new Array() // -> const pluto = []
+// console.log(pluti);
+
+// const pippo = new Array(3, 5, 6);
+// console.log(pippo);
+
+// const paperino = new Array (10);
+// console.log(paperino);
+
+// for( const element of paperino){
+//     console.log(element)
+// }
+
+
+//INDEXOF - mi da la posizione di un elemento
+
+// console.log(numbers.indexOf(100));
+// console.log(numbers.indexOf(999));// se l'elemento non è nell'array restituisce -1
+
+
+//INCLUDES = ci dice se un elemento è contenuto o meno
+
+// console.log(numbers.includes(100));//true
+// console.log(numbers.includes(999));// false
+
+
+// //CONCAT =  ci permette di unire due array,creando un nuovo array
+
+// const topolino = ['leonardo','mattia','daniel'];
+// const paperina = ['evelyn', 'salma', 'stefania'];
+// const gastone = topolino.concat(paperina);
+// console.log(gastone);
+
+// //FUNZIONI MULTI PARAMETRICHE
+
+// function sumAllParams(...params){
+//     let result = 0;
+//     for (let i = 0; i < params.length; i++) {
+//         const element = params[i];
+//         result+= element;
+//     }
+//     return result;
+// }
+// console.log(sumAllParams(2, 4, 6, 8, 7));
+
+// ARRAY DI ARRAY
+
+const superArray = [[1, 2, 3],[1, 1, 1],[3, 2, 1]];
+console.log(superArray.length);
+console.log(superArray[0]);
+
+const arrayInterno = superArray[0];
+
+const elemento0ArrayInterno = arrayInterno[0];
+console.log(elemento0ArrayInterno);
+console.log(superArray[0][0]);
+
+for (let rowNumber = 0; rowNumber < superArray.length; rowNumber++) {
+    const row  = superArray[rowNumber];
+    for (let columnNumber = 0; columnNumber < row.length; columnNumber++) {
+        const cell = row[columnNumber];
+        console.log(cell);
+    }
 }
-console.log(calculateMean(numbers));
