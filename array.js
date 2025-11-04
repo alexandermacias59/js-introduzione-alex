@@ -14,7 +14,7 @@ let booleans = [true, true, true, false, true];
 
 // console.log(booleans[3]); // -> false;
 
-let strings = ['pippo', 'pluto', 'topolino', 'leonardo'];
+let strings = ['pippo', 'pluto', 'topolino', 'leonardo', 'Pippo'];
 
 // console.log(strings.length); // -> 4;
 
@@ -191,3 +191,81 @@ let strings = ['pippo', 'pluto', 'topolino', 'leonardo'];
 
 
 // console.log(arrayToUppercaseWordsStartingWithP(strings))
+
+
+
+//FILTER decidere quali degli elementi dell'array tenere
+
+//fare una funzione che rimuove dall'array tutti i numeri dispari
+
+
+function removeOddNumbers(nArray){
+    const newArray = [];
+    for (let i = 0; i < nArray.length; i++) {
+        const element = nArray[i];
+        if ( element % 2 === 0){
+            newArray.push(element);
+        }
+        
+    }
+    return newArray;
+}
+console.log(removeOddNumbers(numbers));
+
+
+// scrivere una funzione che rimuova da un array di stringhe tutte quelle che iniziano per p
+function removeStartingWithP(strArray) {
+    const newArray = [];
+    for (let i = 0;  i < strArray.length; i++) {
+        const element = strArray[i];
+        const firstChar = element[0];
+        const firstCharLower = firstChar.toLowerCase()
+        if (firstCharLower !== 'p'){
+            newArray.push(element);
+        }
+        
+    } return newArray;
+}
+console.log(removeStartingWithP(strings));
+
+//rimuovi numeri negativi
+
+function removeNegativesNumbers(nArray){
+    const newArray = [];
+    for (let i = 0; i < nArray.length; i++) {
+        const element = nArray[i];
+        if ( element < 0){
+            newArray.push(element);
+        }
+        
+    }
+    return newArray;
+}
+console.log(removeNegativesNumbers(numbers));
+
+//REDUCE = trasforma l'array producendo un risultato che dipende dai componenti dell'array
+
+// 1- Scrivere una funzione che smma tutti i numeri di un array di numeri
+
+function sumAll(nArray){
+    let result = 0;
+    for (let i = 0; i < nArray.length; i++) {
+        const element = nArray[i];
+        result = result + element;
+    } return result;
+}
+
+console.log(sumAll(numbers));
+
+// 2- Scrivi una funzione che calcola la media di un array di numeri
+
+function calculateMean(nArray){
+     let result = 0;
+    for (let i = 0; i < nArray.length; i++) {
+        const element = nArray[i];
+        result = result + element;
+    } 
+    const mean = result / nArray.length;
+    return mean;
+}
+console.log(calculateMean(numbers));

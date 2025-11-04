@@ -937,4 +937,4 @@ function multiplyPoisitiveAndDivideNegative(nbrArray) {
   return risultati;
 }
 
-console.log(multiplyPoisitiveAndDivideNegative(pippo)) //-> [2, 4, 8, 112, 156, 22, -61.5, 6, -11.5, 4, 44, 8];
+console.log(multiplyPoisitiveAndDivideNegative()) //-> [2, 4, 8, 112, 156, 22, -61.5, 6, -11.5, 4, 44, 8];
