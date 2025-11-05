@@ -963,6 +963,7 @@ console.log(trovaMinimo(pippo)); // dovrebbe restituire -123
 
 // 44) Inverti Array con un ciclo
 // Scrivi una funzione invertiArray(array) che restituisce un nuovo array con gli elementi in ordine inverso.
+
 function invertiArray(array) {
   let arrayInverso = [];
   for (let i = array.length - 1; i >= 0; i--) {
@@ -975,6 +976,7 @@ console.log(invertiArray(pippo)); // dovrebbe restituire [4, 22, 2, -23, 3, -123
 
 // 45) Maiuscolo Tutte le Parole
 // Scrivi una funzione maiuscoloTutto(array) che restituisce un nuovo array con tutte le stringhe in maiuscolo.
+
 function maiuscoloTutto(array) {
   let risultati = [];
   for (let i = 0; i < array.length; i++) {
@@ -983,9 +985,11 @@ function maiuscoloTutto(array) {
   return risultati;
 }
 
+console.log(maiuscoloTutto(["ciao", "pippo", "javascript"])); // dovrebbe restituire ["CIAO", "PIPPO", "JAVASCRIPT"]
 
 // 46) Somma Righe Matrice
 // Scrivi una funzione sommaRighe(matrice) che restituisce un array con la somma degli elementi di ogni riga.
+
 function sommaRighe(matrice) {
   let somme = [];
   for (let i = 0; i < matrice.length; i++) {
@@ -997,9 +1001,11 @@ function sommaRighe(matrice) {
   }
   return somme;
 }
+console.log(sommaRighe([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // dovrebbe restituire [6, 15, 24]
 
 // 47) Conta Occorrenze
 // Scrivi una funzione contaOccorrenze(array, elemento) che conta quante volte un elemento appare in un array.
+
 function contaOccorrenze(array, elemento) {
   let conteggio = 0;
   for (let i = 0; i < array.length; i++) {
@@ -1010,6 +1016,7 @@ function contaOccorrenze(array, elemento) {
   return conteggio;
 }
 
+console.log(contaOccorrenze([1, 2, 3, 2, 4, 2, 5], 2)); // dovrebbe restituire 3
 
 // 48) Filtra indice pari
 // Scrivi una funzione filtraIndicePari(array) che tiene tutti gli elementi in posizione dispari
@@ -1023,10 +1030,11 @@ function filtraIndicePari(array) {
   return risultati;
 }
 
-
+console.log(filtraIndicePari([1, 2, 3, 4, 5])); // dovrebbe restituire [2, 4]
 
 // 49) Somma pari 
 // Scrivi una funzione sommaPari(array) che somma tutti i numeri pari
+
 function sommaPari(array) {
   let somma = 0;
   for (let i = 0; i < array.length; i++) {
@@ -1037,6 +1045,7 @@ function sommaPari(array) {
   return somma;
 }
 
+console.log(sommaPari(pippo)); // dovrebbe restituire 12 (2 + 4 + 6)
 
 // 50) trova lunghezze
 // Scrivi una funzione trovaLunghezzeParola(array) che restituisce un array delle lunghezze(numeri) delle stringhe che compongono l'array in input
