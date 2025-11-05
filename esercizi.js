@@ -937,42 +937,114 @@ function multiplyPoisitiveAndDivideNegative(nbrArray) {
   return risultati;
 }
 
-console.log(multiplyPoisitiveAndDivideNegative()) //-> [2, 4, 8, 112, 156, 22, -61.5, 6, -11.5, 4, 44, 8];
+console.log(multiplyPoisitiveAndDivideNegative(pippo)) //-> [2, 4, 8, 112, 156, 22, -61.5, 6, -11.5, 4, 44, 8];
 
 
 // 43) Trova il Minimo
 // Scrivi una funzione trovaMinimo(array) che restituisce il numero più piccolo in un array di numeri.
 
+function trovaMinimo(array) {
+  if (array.length === 0) {
+    return undefined; // array vuoto
+  }
+  
+  let minimo = array[0]; // assumiamo che il primo elemento sia il minimo
+  
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < minimo) {
+      minimo = array[i];
+    }
+  }
+  
+  return minimo;
+}
 
+console.log(trovaMinimo(pippo)); // dovrebbe restituire -123
 
 // 44) Inverti Array con un ciclo
 // Scrivi una funzione invertiArray(array) che restituisce un nuovo array con gli elementi in ordine inverso.
+function invertiArray(array) {
+  let arrayInverso = [];
+  for (let i = array.length - 1; i >= 0; i--) {
+    arrayInverso.push(array[i]);
+  }
+  return arrayInverso;
+}
 
-
+console.log(invertiArray(pippo)); // dovrebbe restituire [4, 22, 2, -23, 3, -123, 11, 78, 56, 4, 2, 1]
 
 // 45) Maiuscolo Tutte le Parole
 // Scrivi una funzione maiuscoloTutto(array) che restituisce un nuovo array con tutte le stringhe in maiuscolo.
-
+function maiuscoloTutto(array) {
+  let risultati = [];
+  for (let i = 0; i < array.length; i++) {
+    risultati.push(array[i].toUpperCase());
+  }
+  return risultati;
+}
 
 
 // 46) Somma Righe Matrice
 // Scrivi una funzione sommaRighe(matrice) che restituisce un array con la somma degli elementi di ogni riga.
-
-
+function sommaRighe(matrice) {
+  let somme = [];
+  for (let i = 0; i < matrice.length; i++) {
+    let sommaRiga = 0;
+    for (let j = 0; j < matrice[i].length; j++) {
+      sommaRiga += matrice[i][j];
+    }
+    somme.push(sommaRiga);
+  }
+  return somme;
+}
 
 // 47) Conta Occorrenze
-// Scrivi una funzione contaOccorrenze(array, elemento) che conta quante volte un elemento appare in un array
-
+// Scrivi una funzione contaOccorrenze(array, elemento) che conta quante volte un elemento appare in un array.
+function contaOccorrenze(array, elemento) {
+  let conteggio = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === elemento) {
+      conteggio++;
+    }
+  }
+  return conteggio;
+}
 
 
 // 48) Filtra indice pari
 // Scrivi una funzione filtraIndicePari(array) che tiene tutti gli elementi in posizione dispari
+function filtraIndicePari(array) {
+  let risultati = [];
+  for (let i = 0; i < array.length; i++) {
+    if (i % 2 !== 0) {
+      risultati.push(array[i]);
+    }
+  }
+  return risultati;
+}
 
 
 
 // 49) Somma pari 
 // Scrivi una funzione sommaPari(array) che somma tutti i numeri pari
+function sommaPari(array) {
+  let somma = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+      somma += array[i];
+    }
+  }
+  return somma;
+}
 
 
 // 50) trova lunghezze
 // Scrivi una funzione trovaLunghezzeParola(array) che restituisce un array delle lunghezze(numeri) delle stringhe che compongono l'array in input
+function trovaLunghezzeParola(array) {
+  let lunghezze = [];
+  for (let i = 0; i < array.length; i++) {
+    lunghezze.push(array[i].length);
+  }
+  return lunghezze;
+}
+console.log(trovaLunghezzeParola(["ciao", "pippo", "javascript"])); // dovrebbe restituire [4, 5, 10]
