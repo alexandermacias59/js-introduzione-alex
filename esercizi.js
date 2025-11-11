@@ -1137,6 +1137,11 @@ function highNumbersOf100 (nArray){
 }
 console.log(highNumbersOf100(numberArray));
 
+
+const result51 = highFilter(numberArray, n => n > 100);
+console.log(result51); // [112, 156]
+
+
 //52) Scrivi una funzione che, dato un array di stringhe, crei un array con tutte le stringhe 
 // che finiscono con 'a'
 
@@ -1166,8 +1171,15 @@ function stringsArrayWithFinalA2 (sArray){
   return newArray;
 }
 console.log(stringsArrayWithFinalA2(stringArray));
+
+
+const result52 = highFilter(stringArray, s => s.toLowerCase().endsWith('a'));
+console.log(result52); // ['pizza', 'frittata', 'lasagne', 'carbonara', 'amatriciana']
+
+
 //53) Scrivi una funzione che, dato un array di numeri, crei un array con tutti i numeri
 // divisibili per 3
+
 function divisibleBy3(nArray){
   const newArray = [];
   for (let i = 0; i < nArray.length; i++) {
@@ -1180,9 +1192,16 @@ function divisibleBy3(nArray){
   return newArray;
 }
 console.log(divisibleBy3(numberArray));
+
+
+const result53 = highFilter(numberArray, n => n % 3 === 0);
+console.log(result53); // [156, 6]
+
+
 // map
 //54) Scrivi una funzione che, dato un array di numeri, crei un array con tutti i numeri
 // elevati al cubo
+
 function elevatedToCubed(nArray){
   const newArray = [];
   for (let i = 0; i < nArray.length; i++) {
@@ -1192,8 +1211,15 @@ function elevatedToCubed(nArray){
   return newArray;
 }
 console.log(elevatedToCubed(numberArray));
+
+
+const result54 = highMap(numberArray, n => n ** 3);
+console.log(result54);
+
+
 //55) Scrivi una funzione che, dato un array di stringhe, crei un array con tutte le stringhe 
 // con la prima lettera maiuscola
+
 function firstCharToUpperCase(sArray){
   const newArray = [];
   for (let i = 0; i < sArray.length; i++) {
@@ -1204,17 +1230,118 @@ function firstCharToUpperCase(sArray){
   return newArray;
 }
 console.log(firstCharToUpperCase(stringArray));
+
+
+const result55 = highMap(stringArray, s => s.charAt(0).toUpperCase() + s.slice(1));
+console.log(result55);
+
+
 //56) Scrivi una funzione che, dato un array di numeri, crei un array di stringhe di
 //cancelletti lunga quanto il numero originale
 // [3, 4, 1, 0] -> ['###', '####', '#', '']
 
+function stringArrayOfHashtag(nArray){
+  const newArray = [];
+  
+  for (let i = 0; i < nArray.length; i++) {
+    let s = "";
+    for (let j = 0; j < nArray[i]; j++) {
+      s += "#";
+    }
+    newArray.push(s);
+  }
+  return newArray;
+}
+console.log(stringArrayOfHashtag(numberArray));
+
+const result56 = highMap(numberArray, n => {
+  let str = '';
+  for (let i = 0; i < n; i++) {
+    str += '#';
+  }
+  return str;
+});
+console.log(result56);
+
+
 // reduce
 //57) Scrivi una funzione che, dato un array di numeri, li moltiplichi tutti tra loro
+
+function multiplyEveryNumbersOfNumberArray(nArray){
+  let prodotto = 1;
+  for (let i = 0; i < nArray.length; i++) {
+    prodotto *= nArray[i];
+  }
+  return prodotto;
+}
+console.log(multiplyEveryNumbersOfNumberArray(numberArray));
+
+
+const result57 = highReduce(numberArray, (acc, n) => acc * n, 1);
+console.log(result57);
+
 
 //58) Scrivi una funzione che, dato un array di stringhe, crei una stringa composta 
 // dalle prime tre lettere delle strighe originarie
 
+function firstThreeLetter(sArray) {
+  let risultato = ""; // stringa vuota per accumulare
+  for (let i = 0; i < sArray.length; i++) {
+    risultato += sArray[i].substring(0, 3); // prende le prime 3 lettere
+  }
+  return risultato;
+}
+console.log(firstThreeLetter(stringArray)); 
+
+
+const result58 = highReduce(stringArray, (acc, s) => acc + s.substring(0, 3), '');
+console.log(result58); // 'pizzspafrilascarama'
+
+
 //59) Scrivi una funzione che, dato un array di numeri, trovi il maggiore
+
+ function findTheBiggestNumber(nArray){
+  let max = nArray[0];
+  for (let i = 1; i < nArray.length; i++) {
+    if (nArray[i] > max) {
+      max = nArray[i];
+    }
+  }
+  return max;
+}
+console.log(findTheBiggestNumber(numberArray));
+
+const result59 = highReduce(numberArray, (acc, n) => n > acc ? n : acc, numberArray[0]);
+console.log(result59);
+
 
 //60) Scrivi una funzione che, dato un array di stringhe, trovi la stringa con più
 // volte ripetuta la lettera t;
+
+function findTheStringWithMoreT(sArray){
+  let maxCount = 0;
+  let resultString = "";
+  for (let i = 0; i < sArray.length; i++) {
+    const currentString = sArray[i];
+    let countT = 0;
+    for (let j = 0; j < currentString.length; j++) {
+      if (currentString[j].toLowerCase() === 't') {
+        countT++;
+      }
+    }
+    if (countT > maxCount) {
+      maxCount = countT;
+      resultString = currentString;
+    }
+  }
+  return resultString;
+}
+console.log(findTheStringWithMoreT(stringArray));
+
+
+const result60 = highReduce(stringArray, (acc, s) => {
+  const countT = s.split('').filter(c => c.toLowerCase() === 't').length;
+  const accCount = acc.split('').filter(c => c.toLowerCase() === 't').length;
+  return countT > accCount ? s : acc;
+}, '');
+console.log(result60); // 'spaghetti'
