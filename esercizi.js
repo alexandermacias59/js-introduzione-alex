@@ -888,172 +888,333 @@
 // console.log(farfallinoConvert("Vacanze"));  
 
 
-const pippo = [1, 2, 4, 56, 78, 11, -123, 3, -23, 2, 22, 4];
+// const pippo = [1, 2, 4, 56, 78, 11, -123, 3, -23, 2, 22, 4];
 
-//41) creare una funzione che dato un array di numeri li eleva tutti al quadrato
+// //41) creare una funzione che dato un array di numeri li eleva tutti al quadrato
 
-function squareArray(nbrArray) {
-     let risultati = [];
-  for (let i = 0; i < nbrArray.length; i++) {
-    risultati.push(nbrArray[i] ** 2);
-  }
-  return risultati;
-}
+// function squareArray(nbrArray) {
+//      let risultati = [];
+//   for (let i = 0; i < nbrArray.length; i++) {
+//     risultati.push(nbrArray[i] ** 2);
+//   }
+//   return risultati;
+// }
 
-console.log(squareArray(pippo)) //-> [1, 4, 16, 3136, ....]
-
-
-//42) creare una funzione che dato un array di numeri li eleva al quadrato solo i numeri dispari
-
-function squareOddArray(nbrArray) {
-      let risultati = [];
-  for (let i = 0; i < nbrArray.length; i++) {
-    let numero = nbrArray[i];
-    if (numero % 2 !== 0) {
-      risultati.push(numero ** 2);
-    } else {
-      risultati.push(numero);
-    }
-  }
-  return risultati;
-}
-
-console.log(squareOddArray(pippo)) //-> [1, 2, 4, 56, 78, 121, 15129, 9, 529, 2, 22, 4]
-
-//42) creare una funzione che dato un array di numeri moltiplichi per due quelli positivi e divida per due i negativi
-
-function multiplyPoisitiveAndDivideNegative(nbrArray) {
-      let risultati = [];
-  for (let i = 0; i < nbrArray.length; i++) {
-    let numero = nbrArray[i];
-    if (numero > 0) {
-      risultati.push(numero * 2);
-    } else if (numero < 0) {
-      risultati.push(numero / 2);
-    } else {
-      risultati.push(numero); // se è 0, resta invariato
-    }
-  }
-  return risultati;
-}
-
-console.log(multiplyPoisitiveAndDivideNegative(pippo)) //-> [2, 4, 8, 112, 156, 22, -61.5, 6, -11.5, 4, 44, 8];
+// console.log(squareArray(pippo)) //-> [1, 4, 16, 3136, ....]
 
 
-// 43) Trova il Minimo
-// Scrivi una funzione trovaMinimo(array) che restituisce il numero più piccolo in un array di numeri.
+// //42) creare una funzione che dato un array di numeri li eleva al quadrato solo i numeri dispari
 
-function trovaMinimo(array) {
-  if (array.length === 0) {
-    return undefined; // array vuoto
-  }
+// function squareOddArray(nbrArray) {
+//       let risultati = [];
+//   for (let i = 0; i < nbrArray.length; i++) {
+//     let numero = nbrArray[i];
+//     if (numero % 2 !== 0) {
+//       risultati.push(numero ** 2);
+//     } else {
+//       risultati.push(numero);
+//     }
+//   }
+//   return risultati;
+// }
+
+// console.log(squareOddArray(pippo)) //-> [1, 2, 4, 56, 78, 121, 15129, 9, 529, 2, 22, 4]
+
+// //42) creare una funzione che dato un array di numeri moltiplichi per due quelli positivi e divida per due i negativi
+
+// function multiplyPoisitiveAndDivideNegative(nbrArray) {
+//       let risultati = [];
+//   for (let i = 0; i < nbrArray.length; i++) {
+//     let numero = nbrArray[i];
+//     if (numero > 0) {
+//       risultati.push(numero * 2);
+//     } else if (numero < 0) {
+//       risultati.push(numero / 2);
+//     } else {
+//       risultati.push(numero); // se è 0, resta invariato
+//     }
+//   }
+//   return risultati;
+// }
+
+// console.log(multiplyPoisitiveAndDivideNegative(pippo)) //-> [2, 4, 8, 112, 156, 22, -61.5, 6, -11.5, 4, 44, 8];
+
+
+// // 43) Trova il Minimo
+// // Scrivi una funzione trovaMinimo(array) che restituisce il numero più piccolo in un array di numeri.
+
+// function trovaMinimo(array) {
+//   if (array.length === 0) {
+//     return undefined; // array vuoto
+//   }
   
-  let minimo = array[0]; // assumiamo che il primo elemento sia il minimo
+//   let minimo = array[0]; // assumiamo che il primo elemento sia il minimo
   
-  for (let i = 1; i < array.length; i++) {
-    if (array[i] < minimo) {
-      minimo = array[i];
-    }
-  }
+//   for (let i = 1; i < array.length; i++) {
+//     if (array[i] < minimo) {
+//       minimo = array[i];
+//     }
+//   }
   
-  return minimo;
-}
+//   return minimo;
+// }
 
-console.log(trovaMinimo(pippo)); // dovrebbe restituire -123
+// console.log(trovaMinimo(pippo)); // dovrebbe restituire -123
 
-// 44) Inverti Array con un ciclo
-// Scrivi una funzione invertiArray(array) che restituisce un nuovo array con gli elementi in ordine inverso.
+// // 44) Inverti Array con un ciclo
+// // Scrivi una funzione invertiArray(array) che restituisce un nuovo array con gli elementi in ordine inverso.
 
-function invertiArray(array) {
-  let arrayInverso = [];
-  for (let i = array.length - 1; i >= 0; i--) {
-    arrayInverso.push(array[i]);
-  }
-  return arrayInverso;
-}
+// function invertiArray(array) {
+//   let arrayInverso = [];
+//   for (let i = array.length - 1; i >= 0; i--) {
+//     arrayInverso.push(array[i]);
+//   }
+//   return arrayInverso;
+// }
 
-console.log(invertiArray(pippo)); // dovrebbe restituire [4, 22, 2, -23, 3, -123, 11, 78, 56, 4, 2, 1]
+// console.log(invertiArray(pippo)); // dovrebbe restituire [4, 22, 2, -23, 3, -123, 11, 78, 56, 4, 2, 1]
 
-// 45) Maiuscolo Tutte le Parole
-// Scrivi una funzione maiuscoloTutto(array) che restituisce un nuovo array con tutte le stringhe in maiuscolo.
+// // 45) Maiuscolo Tutte le Parole
+// // Scrivi una funzione maiuscoloTutto(array) che restituisce un nuovo array con tutte le stringhe in maiuscolo.
 
-function maiuscoloTutto(array) {
-  let risultati = [];
-  for (let i = 0; i < array.length; i++) {
-    risultati.push(array[i].toUpperCase());
-  }
-  return risultati;
-}
+// function maiuscoloTutto(array) {
+//   let risultati = [];
+//   for (let i = 0; i < array.length; i++) {
+//     risultati.push(array[i].toUpperCase());
+//   }
+//   return risultati;
+// }
 
-console.log(maiuscoloTutto(["ciao", "pippo", "javascript"])); // dovrebbe restituire ["CIAO", "PIPPO", "JAVASCRIPT"]
+// console.log(maiuscoloTutto(["ciao", "pippo", "javascript"])); // dovrebbe restituire ["CIAO", "PIPPO", "JAVASCRIPT"]
 
-// 46) Somma Righe Matrice
-// Scrivi una funzione sommaRighe(matrice) che restituisce un array con la somma degli elementi di ogni riga.
+// // 46) Somma Righe Matrice
+// // Scrivi una funzione sommaRighe(matrice) che restituisce un array con la somma degli elementi di ogni riga.
 
-function sommaRighe(matrice) {
-  let somme = [];
-  for (let i = 0; i < matrice.length; i++) {
-    let sommaRiga = 0;
-    for (let j = 0; j < matrice[i].length; j++) {
-      sommaRiga += matrice[i][j];
+// function sommaRighe(matrice) {
+//   let somme = [];
+//   for (let i = 0; i < matrice.length; i++) {
+//     let sommaRiga = 0;
+//     for (let j = 0; j < matrice[i].length; j++) {
+//       sommaRiga += matrice[i][j];
+//     }
+//     somme.push(sommaRiga);
+//   }
+//   return somme;
+// }
+// console.log(sommaRighe([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // dovrebbe restituire [6, 15, 24]
+
+// // 47) Conta Occorrenze
+// // Scrivi una funzione contaOccorrenze(array, elemento) che conta quante volte un elemento appare in un array.
+
+// function contaOccorrenze(array, elemento) {
+//   let conteggio = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] === elemento) {
+//       conteggio++;
+//     }
+//   }
+//   return conteggio;
+// }
+
+// console.log(contaOccorrenze([1, 2, 3, 2, 4, 2, 5], 2)); // dovrebbe restituire 3
+
+// // 48) Filtra indice pari
+// // Scrivi una funzione filtraIndicePari(array) che tiene tutti gli elementi in posizione dispari
+// function filtraIndicePari(array) {
+//   let risultati = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (i % 2 !== 0) {
+//       risultati.push(array[i]);
+//     }
+//   }
+//   return risultati;
+// }
+
+// console.log(filtraIndicePari([1, 2, 3, 4, 5])); // dovrebbe restituire [2, 4]
+
+// // 49) Somma pari 
+// // Scrivi una funzione sommaPari(array) che somma tutti i numeri pari
+
+// function sommaPari(array) {
+//   let somma = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i] % 2 === 0) {
+//       somma += array[i];
+//     }
+//   }
+//   return somma;
+// }
+
+// console.log(sommaPari(pippo)); // dovrebbe restituire 12 (2 + 4 + 6)
+
+// // 50) trova lunghezze
+// // Scrivi una funzione trovaLunghezzeParola(array) che restituisce un array delle lunghezze(numeri) delle stringhe che compongono l'array in input
+// function trovaLunghezzeParola(array) {
+//   let lunghezze = [];
+//   for (let i = 0; i < array.length; i++) {
+//     lunghezze.push(array[i].length);
+//   }
+//   return lunghezze;
+// }
+// console.log(trovaLunghezzeParola(["ciao", "pippo", "javascript"])); // dovrebbe restituire [4, 5, 10]
+
+
+
+////////// HIGH ORDER FUNCTIONS
+
+
+function highFilter(array, conditionFunction){
+
+    const newArray = []
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+
+        if (conditionFunction(element)) {
+            newArray.push(element);
+        }
+        
     }
-    somme.push(sommaRiga);
-  }
-  return somme;
+
+    return newArray;
 }
-console.log(sommaRighe([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // dovrebbe restituire [6, 15, 24]
 
-// 47) Conta Occorrenze
-// Scrivi una funzione contaOccorrenze(array, elemento) che conta quante volte un elemento appare in un array.
+function highMap(array, transformFunction){
 
-function contaOccorrenze(array, elemento) {
-  let conteggio = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === elemento) {
-      conteggio++;
+    const newArray = [];
+
+    for (let i = 0; i < array.length; i++) {
+
+        const element = array[i];
+
+        const newElement = transformFunction(element, i);
+
+        newArray.push(newElement); 
     }
-  }
-  return conteggio;
+    return newArray;
 }
 
-console.log(contaOccorrenze([1, 2, 3, 2, 4, 2, 5], 2)); // dovrebbe restituire 3
 
-// 48) Filtra indice pari
-// Scrivi una funzione filtraIndicePari(array) che tiene tutti gli elementi in posizione dispari
-function filtraIndicePari(array) {
-  let risultati = [];
-  for (let i = 0; i < array.length; i++) {
-    if (i % 2 !== 0) {
-      risultati.push(array[i]);
+function highReduce(array, reduceFunction, startingValue){
+
+    let accumulator = startingValue;
+
+    for (let i = 0; i < array.length; i++) {
+
+        const current = array[i];
+
+        accumulator = reduceFunction(accumulator, current, i)
+        
     }
-  }
-  return risultati;
+
+    return accumulator;
 }
 
-console.log(filtraIndicePari([1, 2, 3, 4, 5])); // dovrebbe restituire [2, 4]
+const numberArray = [2, 4, 8, 112, 156, 22, -61.5, 6, -11.5, 4, 44, 8, 4, -3];
 
-// 49) Somma pari 
-// Scrivi una funzione sommaPari(array) che somma tutti i numeri pari
+const stringArray = ['pizza', 'spaghetti', 'frittata', 'lasagne', 'carbonara', 'amatriciana'];
 
-function sommaPari(array) {
-  let somma = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 === 0) {
-      somma += array[i];
+
+//Risolvere questi esercizi in tre modi:
+// - senza high order functions
+// - con le HOF create da noi
+// - con le HOF di JS
+
+// filter
+//51) Scrivi una funzione che, dato un array di numeri, crei un array con tutti i numeri
+// maggiori di 100
+
+function highNumbersOf100 (nArray){
+  const newArray = [];
+  for (let i = 0; i < nArray.length; i++) {
+    const n = nArray[i];
+    if( n > 100){
+      newArray.push(n);
     }
+    
   }
-  return somma;
+  return newArray;
 }
+console.log(highNumbersOf100(numberArray));
 
-console.log(sommaPari(pippo)); // dovrebbe restituire 12 (2 + 4 + 6)
+//52) Scrivi una funzione che, dato un array di stringhe, crei un array con tutte le stringhe 
+// che finiscono con 'a'
 
-// 50) trova lunghezze
-// Scrivi una funzione trovaLunghezzeParola(array) che restituisce un array delle lunghezze(numeri) delle stringhe che compongono l'array in input
-function trovaLunghezzeParola(array) {
-  let lunghezze = [];
-  for (let i = 0; i < array.length; i++) {
-    lunghezze.push(array[i].length);
+function stringsArrayWithFinalA (sArray){
+  const newArray = [];
+  for (let i = 0; i < sArray.length; i++) {
+    const s = sArray[i];
+    if(s.toLowerCase().endsWith("a")){
+      newArray.push(s);
+    }
+    
   }
-  return lunghezze;
+  return newArray;
 }
-console.log(trovaLunghezzeParola(["ciao", "pippo", "javascript"])); // dovrebbe restituire [4, 5, 10]
+console.log(stringsArrayWithFinalA(stringArray));
+
+function stringsArrayWithFinalA2 (sArray){
+  const newArray = [];
+  for (let i = 0; i < sArray.length; i++) {
+    const s = sArray[i];
+    const lastStringChar = s.toLowerCase();
+    if(lastStringChar[lastStringChar.length -1] === "a"){
+      newArray.push(s);
+    }
+    
+  }
+  return newArray;
+}
+console.log(stringsArrayWithFinalA2(stringArray));
+//53) Scrivi una funzione che, dato un array di numeri, crei un array con tutti i numeri
+// divisibili per 3
+function divisibleBy3(nArray){
+  const newArray = [];
+  for (let i = 0; i < nArray.length; i++) {
+    const n = nArray[i];
+    if( n % 3 === 0){
+      newArray.push(n);
+    }
+    
+  }
+  return newArray;
+}
+console.log(divisibleBy3(numberArray));
+// map
+//54) Scrivi una funzione che, dato un array di numeri, crei un array con tutti i numeri
+// elevati al cubo
+function elevatedToCubed(nArray){
+  const newArray = [];
+  for (let i = 0; i < nArray.length; i++) {
+    const n = nArray[i];
+      newArray.push(n **3);
+  }
+  return newArray;
+}
+console.log(elevatedToCubed(numberArray));
+//55) Scrivi una funzione che, dato un array di stringhe, crei un array con tutte le stringhe 
+// con la prima lettera maiuscola
+function firstCharToUpperCase(sArray){
+  const newArray = [];
+  for (let i = 0; i < sArray.length; i++) {
+    const s = sArray[i];
+    const firstStringChar = s.charAt(0).toUpperCase() + s.slice(1);
+    newArray.push(firstStringChar);
+  }
+  return newArray;
+}
+console.log(firstCharToUpperCase(stringArray));
+//56) Scrivi una funzione che, dato un array di numeri, crei un array di stringhe di
+//cancelletti lunga quanto il numero originale
+// [3, 4, 1, 0] -> ['###', '####', '#', '']
+
+// reduce
+//57) Scrivi una funzione che, dato un array di numeri, li moltiplichi tutti tra loro
+
+//58) Scrivi una funzione che, dato un array di stringhe, crei una stringa composta 
+// dalle prime tre lettere delle strighe originarie
+
+//59) Scrivi una funzione che, dato un array di numeri, trovi il maggiore
+
+//60) Scrivi una funzione che, dato un array di stringhe, trovi la stringa con più
+// volte ripetuta la lettera t;
