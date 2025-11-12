@@ -1394,3 +1394,21 @@ function orderByMoreExpensive(n1,n2){
 }
 prodotti.sort(orderByMoreExpensive);
 console.log(prodotti);
+
+
+//esercizio 62
+
+function orderByNameDesc(n1,n2){
+  return n2.nome.localeCompare(n1.nome);
+}
+prodotti.sort(orderByNameDesc);
+console.log(prodotti);
+
+
+//esercizio 63
+
+function orderByNameCategoryAsc(n1,n2){
+  return n1.categoria.localeCompare(n2.categoria) || n2.peso - n1.peso;
+}
+prodotti.sort(orderByNameCategoryAsc);
+console.log(prodotti);
