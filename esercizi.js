@@ -1412,3 +1412,20 @@ function orderByNameCategoryAsc(n1,n2){
 }
 prodotti.sort(orderByNameCategoryAsc);
 console.log(prodotti);
+
+
+//esercizio 64
+function orderByExpirationYear(n1,n2){
+  const year1 = new Date(n1.scadenza).getFullYear();
+  const year2 = new Date(n2.scadenza).getFullYear();
+  return year1 - year2;
+}
+prodotti.sort(orderByExpirationYear);
+console.log(prodotti);
+
+//esercizio 65
+function orderByCategoryDescWeightAndNameAsc(n1,n2){
+  return n2.categoria.localeCompare(n1.categoria) || n1.peso - n2.peso || n1.nome.localeCompare(n2.nome);
+}
+prodotti.sort(orderByCategoryDescWeightAndNameAsc);
+console.log(prodotti);
