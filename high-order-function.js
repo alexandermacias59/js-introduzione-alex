@@ -204,123 +204,123 @@
 
 
 //FOREACH
-const numbers = []
-const studenti = [
-  "Alice",
-  "Marco",
-  "Giulia",
-  "Lorenzo",
-  "Sara",
-  "Davide",
-  "Elena",
-  "Francesco",
-  "Marta",
-  "Gabriele"
-];
-//for
-for (let i = 0; i < studenti.length; i++) {
-    const student = studenti[i];
-    console.log(student);
-}
-//foreach
-studenti.forEach((student, i) => console.log(i, student));
+// const numbers = []
+// const studenti = [
+//   "Alice",
+//   "Marco",
+//   "Giulia",
+//   "Lorenzo",
+//   "Sara",
+//   "Davide",
+//   "Elena",
+//   "Francesco",
+//   "Marta",
+//   "Gabriele"
+// ];
+// //for
+// for (let i = 0; i < studenti.length; i++) {
+//     const student = studenti[i];
+//     console.log(student);
+// }
+// //foreach
+// studenti.forEach((student, i) => console.log(i, student));
 
 
 
 
-//FIND
-const number = [100, -30, 20, 11, 1, 40, -21, -15, 3, 9, 300, 5001];
+// //FIND
+// const number = [100, -30, 20, 11, 1, 40, -21, -15, 3, 9, 300, 5001];
 
-function isGreaterThan100(nbr){
-    return nbr>100;
-}
-// console.log(number.filter(isGreaterThan100)); // esempio con filter
-console.log(number.find(isGreaterThan100));
-
-
-
-
-//SOME
-
-console.log(number.some(isGreaterThan100));
+// function isGreaterThan100(nbr){
+//     return nbr>100;
+// }
+// // console.log(number.filter(isGreaterThan100)); // esempio con filter
+// console.log(number.find(isGreaterThan100));
 
 
 
-//SORT
+
+// //SOME
+
+// console.log(number.some(isGreaterThan100));
 
 
-number.sort();
-console.log(number);
 
-studenti.sort();
-console.log(studenti);
+// //SORT
 
 
-function compareNumbersAscending(n1, n2){
-    // if (n1 > n2) {
-    //     return 1;
-    // }else if (n2 > n1) {
-    //     return -1;
-    // } else {
-    //     return 0;
-    // }
-    return n1 - n2;
-}
-number.sort(compareNumbersAscending);
-console.log(number);
+// number.sort();
+// console.log(number);
+
+// studenti.sort();
+// console.log(studenti);
 
 
-function compareNumbersDescending(n1, n2){
+// function compareNumbersAscending(n1, n2){
+//     // if (n1 > n2) {
+//     //     return 1;
+//     // }else if (n2 > n1) {
+//     //     return -1;
+//     // } else {
+//     //     return 0;
+//     // }
+//     return n1 - n2;
+// }
+// number.sort(compareNumbersAscending);
+// console.log(number);
+
+
+// function compareNumbersDescending(n1, n2){
    
-    return n2 - n1;
-}
-number.sort(compareNumbersDescending);
-console.log(number);
+//     return n2 - n1;
+// }
+// number.sort(compareNumbersDescending);
+// console.log(number);
 
 
 
-function compareStringsAscending(s1, s2){
-    return s1.localeCompare(s2);
-}
-studenti.sort(compareStringsAscending);
-console.log(studenti);
+// function compareStringsAscending(s1, s2){
+//     return s1.localeCompare(s2);
+// }
+// studenti.sort(compareStringsAscending);
+// console.log(studenti);
 
 
-function compareStringsDescending(s1, s2){
-    return s2.localeCompare(s1);
-}
-studenti.sort(compareStringsDescending);
-console.log(studenti);
+// function compareStringsDescending(s1, s2){
+//     return s2.localeCompare(s1);
+// }
+// studenti.sort(compareStringsDescending);
+// console.log(studenti);
 
 
 
-const cars = [
-  {
-    model: "CLA 200",
-    producer: "Mercedes-Benz",
-    maxSpeed: 225 // km/h
-  },
-  {
-    model: "Model 3",
-    producer: "Tesla",
-    maxSpeed: 261 // km/h
-  },
-  {
-    model: "Civic Type R",
-    producer: "Honda",
-    maxSpeed: 272 // km/h
-  },
-  {
-    model: "Golf GTI",
-    producer: "Volkswagen",
-    maxSpeed: 250 // km/h
-  },
-  {
-    model: "Mustang GT",
-    producer: "Ford",
-    maxSpeed: 250 // km/h
-  }
-];
+// const cars = [
+//   {
+//     model: "CLA 200",
+//     producer: "Mercedes-Benz",
+//     maxSpeed: 225 // km/h
+//   },
+//   {
+//     model: "Model 3",
+//     producer: "Tesla",
+//     maxSpeed: 261 // km/h
+//   },
+//   {
+//     model: "Civic Type R",
+//     producer: "Honda",
+//     maxSpeed: 272 // km/h
+//   },
+//   {
+//     model: "Golf GTI",
+//     producer: "Volkswagen",
+//     maxSpeed: 250 // km/h
+//   },
+//   {
+//     model: "Mustang GT",
+//     producer: "Ford",
+//     maxSpeed: 250 // km/h
+//   }
+// ];
 
 
 
@@ -358,24 +358,48 @@ const cars = [
 // cars.sort(compareCarsBySpeedDescendingAndModelAscending);
 // console.log(cars);
 
-function compareCarsBySpeedDescending(car1, car2) {
-    return car2.maxSpeed - car1.maxSpeed;
+// function compareCarsBySpeedDescending(car1, car2) {
+//     return car2.maxSpeed - car1.maxSpeed;
+// }
+
+// function compareCarsByModelAscending(car1, car2) {
+//     return car1.model.localeCompare(car2.model);
+// }
+
+// function compareCarsBySpeedDescendingAndModelAscending(car1, car2) {
+//     if(car1.maxSpeed > car2.maxSpeed){
+//         return -1;
+//     } else if (car2.maxSpeed > car1.maxSpeed){
+//         return 1;
+//     } else {
+//         return car1.model.localeCompare(car2.model);
+//     }
+// }
+
+// cars.sort(compareCarsBySpeedDescendingAndModelAscending);
+
+// console.log(cars);
+
+const numbers = [200, 2, -20, 12, 5, 1000];
+const doubleNumbers = numbers.map((n) => n * 2);
+
+console.log(numbers);
+console.log(doubleNumbers);
+
+
+
+numbers.sort((n1, n2) => n1-n2);
+console.log(numbers);
+
+
+function correctSort(array, compareFn){
+
+const clone = [...array]; //spread operator
+// const clone = new Array(...array);
+clone.sort(compareFn)
+return clone;
+
 }
-
-function compareCarsByModelAscending(car1, car2) {
-    return car1.model.localeCompare(car2.model);
-}
-
-function compareCarsBySpeedDescendingAndModelAscending(car1, car2) {
-    if(car1.maxSpeed > car2.maxSpeed){
-        return -1;
-    } else if (car2.maxSpeed > car1.maxSpeed){
-        return 1;
-    } else {
-        return car1.model.localeCompare(car2.model);
-    }
-}
-
-cars.sort(compareCarsBySpeedDescendingAndModelAscending);
-
-console.log(cars);
+const sortedNumbers = correctSort(numbers, (n1,n2) => n1 - n2);
+console.log(sortedNumbers);
+console.log(numbers);
